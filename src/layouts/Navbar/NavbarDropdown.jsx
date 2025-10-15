@@ -3,9 +3,6 @@ import {
   Settings,
   LifeBuoy,
   FileText,
-  Globe,
-  Sun,
-  Moon,
   LogOut,
 } from "lucide-react";
 

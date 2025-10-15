@@ -66,7 +66,7 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-lightText focus:outline-none bg-transparent p-1 rounded-full hover:bg-white/10 transition-all duration-navbar"
+          className="md:hidden text-darkText focus:outline-none bg-transparent p-3 rounded-full hover:bg-white/10 transition-all duration-navbar focus:outline-none border-none hover:border-none"
         >
           <Menu size={30} />
         </button>

@@ -14,7 +14,7 @@ export default function MobileMenu({
       {isOpen && (
         <div
           ref={menuRef}
-          className="fixed inset-x-0 top-16 bg-lightBg backdrop-blur-md text-center border-t border-gray-200 shadow-lg py-6 z-50 animate-slide-down"
+          className="fixed inset-x-0 top-0 bg-lightBg backdrop-blur-md text-center border-t border-gray-200 shadow-lg py-6 z-50 animate-slide-down"
         >
           <nav className="flex flex-col space-y-5 px-4 max-w-md mx-auto">
             <Link

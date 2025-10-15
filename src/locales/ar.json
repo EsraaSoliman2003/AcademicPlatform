@@ -1,0 +1,28 @@
+{
+  "home": "الرئيسية",
+  "about": "من نحن",
+  "contact": "تواصل معنا",
+  "welcome": "مرحبًا بك في لوحة التحكم",
+  "settings": "الإعدادات",
+  "logout": "تسجيل الخروج",
+
+  "welcomeMessage": "مرحبًا بك في تطبيقي",
+  "homeDescription": "هذه هي الصفحة الرئيسية لمشروعك",
+
+  "aboutTitle": "من نحن",
+  "aboutDescription": "هذه صفحة من نحن، يمكنك معرفة المزيد عنا هنا",
+
+  "notFoundMessage": "404 | الصفحة غير موجودة",
+  "pageNotExist": "الصفحة غير موجودة",
+
+  "login": "تسجيل الدخول",
+  "support": "الدعم",
+  "license": "الرخصة",
+  "DarkMode": "الوضع المظلم",
+  "LightMode": "الوضع الفاتح",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة السر",
+
+  "profileTitle": "بلا بلا بلا",
+  "profileDescription": "تيست تيست تيست"
+}

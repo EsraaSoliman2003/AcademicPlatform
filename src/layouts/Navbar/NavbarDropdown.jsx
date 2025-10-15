@@ -27,13 +27,13 @@ export default function NavbarDropdown({
     >
       <button
         onClick={() => setDropdownOpen((prev) => !prev)}
-        className="p-3 bg-transparent rounded-full transition-all duration-300 focus:outline-none"
+        className="bg-transparent rounded-full transition-all duration-navbar focus:outline-none border-none hover:border-none"
       >
-        <Settings className="w-6 h-6 text-primary" />
+        <Settings className="w-9 h-9 text-darkText hover:text-primary duration-navbar border-none hover:border-none" />
       </button>
 
       {dropdownOpen && (
-        <div className="overflow-hidden absolute right-0 mt-2 w-52 origin-top-right rounded-xl bg-white border border-gray-200 shadow-xl transition-all duration-200 ease-out animate-fadeIn">
+        <div className="overflow-hidden absolute right-0 mt-2 w-52 origin-top-right rounded-xl bg-white border border-gray-200 shadow-xl transition-all duration-navbar ease-out animate-fadeIn">
           <div>
             {/* Support */}
             <button
@@ -66,7 +66,7 @@ export default function NavbarDropdown({
                   bg-transparent border-none rounded-none
                   hover:bg-red-100
                   hover:text-red-800
-                  transition-all duration-200
+                  transition-all duration-navbar
                 "
               >
                 <LogOut size={18} />

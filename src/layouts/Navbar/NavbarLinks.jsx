@@ -29,7 +29,7 @@ export default function NavbarLinks() {
             <Link
               key={item.key}
               to={`/${item.key === "home" ? "" : item.key}`}
-              className="text-lightText font-medium hover:text-primaryHover transition-colors duration-navbar relative group"
+              className="text-darkText font-medium hover:text-primaryHover transition-colors duration-navbar relative group"
             >
               {item.label}
               <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-primaryHover transition-all duration-navbar group-hover:w-full"></span>
@@ -40,7 +40,7 @@ export default function NavbarLinks() {
         <div className="flex items-center gap-3">
           <Link
             to="/login"
-            className="bg-primary text-white px-5 py-2.5 rounded-full hover:bg-primaryHover transition-all duration-navbar shadow-glass text-sm font-medium"
+            className="bg-primary text-white px-5 py-2.5 rounded-full hover:bg-primaryHover hover:text-white transition-all duration-navbar shadow-glass text-sm font-medium"
           >
             تسجيل الدخول
           </Link>

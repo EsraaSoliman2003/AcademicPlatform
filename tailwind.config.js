@@ -13,8 +13,8 @@ export default {
         darkText: "#e2e8f0",
 
         // Primary blue
-        primary: "#2563eb",
-        primaryHover: "#1d4ed8",
+        primary: "#10b981",
+        primaryHover: "#059669",
 
         // Accent green
         accentColor: "#10b981",

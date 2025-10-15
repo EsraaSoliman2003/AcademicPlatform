@@ -185,29 +185,6 @@ export default function MostViewedCourses() {
           />
         </div>
       </div>
-
-      <style jsx>{`
-        .custom-pagination {
-          display: flex;
-          justify-content: center;
-          gap: 8px;
-          margin-top: 2rem;
-        }
-
-        .swiper-pagination-bullet {
-          width: 12px;
-          height: 12px;
-          background: ${colors.gray};
-          opacity: 0.5;
-          transition: all 0.3s ease;
-        }
-
-        .swiper-pagination-bullet-active {
-          background: ${colors.primary};
-          opacity: 1;
-          transform: scale(1.2);
-        }
-      `}</style>
     </section>
   );
 }

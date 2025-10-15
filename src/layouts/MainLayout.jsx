@@ -1,5 +1,6 @@
 import Navbar from "./Navbar/Navbar";
 import CustomSnackbar from "../components/Snackbar/CustomSnackbar";
+import Footer from "./Footer/Footer";
 
 export default function MainLayout({ children }) {
   return (
@@ -8,6 +9,7 @@ export default function MainLayout({ children }) {
       <main className="flex-1 min-h-[calc(100vh-72px)] items-center justify-center">
         {children}
       </main>
+      <Footer />
 
       {/* Global Snackbar */}
       <CustomSnackbar />

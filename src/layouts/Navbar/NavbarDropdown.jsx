@@ -29,7 +29,7 @@ export default function NavbarDropdown({
         onClick={() => setDropdownOpen((prev) => !prev)}
         className="bg-transparent rounded-full transition-all duration-navbar focus:outline-none border-none hover:border-none"
       >
-        <Settings className="w-9 h-9 text-darkText hover:text-primary duration-navbar border-none hover:border-none" />
+        <Settings className="w-9 h-9 text-darkText hover:text-primary duration-navbar focus:outline-none border-none hover:border-none" />
       </button>
 
       {dropdownOpen && (

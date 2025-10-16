@@ -1,22 +1,21 @@
 import { Link } from "react-router-dom";
 import libraryBg from "../../assets/library.jpg";
 import personImg from "../../assets/person.png";
-import styles from "./HomeMain.module.css";
+import styles from "./animation.module.css";
 import { Search } from "lucide-react";
 
 export default function Home() {
   return (
     <div
-      className="relative w-full h-screen flex items-center justify-center"
+      className="relative w-full h-screen flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: `url(${libraryBg})`,
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         backgroundPosition: "center",
-        overflow: "hidden",
       }}
     >
-      {/* Overlay dark */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/70"></div>
 
       {/* Main Section */}
@@ -35,7 +34,7 @@ export default function Home() {
           className={`flex-1 text-center xl:text-right text-white z-10 w-full xl:w-auto ${styles.animateSlideInRight}`}
         >
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
-            مرحبا بكم في منصتنا
+            مرحباً بكم في منصتنا
           </h1>
 
           <p className="text-white/80 mb-6 max-w-md md:max-w-lg mx-auto xl:mx-0 text-base md:text-lg leading-relaxed">
@@ -68,6 +67,27 @@ export default function Home() {
           </Link>
         </div>
       </main>
+
+      {/* 🌊 Waves exactly like Elzero website */}
+      <svg
+        className={`absolute bottom-0 left-0 w-full h-28 z-10`}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 24 150 28"
+        preserveAspectRatio="none"
+      >
+        <defs>
+          <path
+            id="gentle-wave"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          />
+        </defs>
+        <g className={styles.parallax}>
+          <use href="#gentle-wave" x="48" y="0" fill="rgba(226,244,238,0.7)" />
+          <use href="#gentle-wave" x="48" y="3" fill="rgba(226,244,2385,0.5)" />
+          <use href="#gentle-wave" x="48" y="5" fill="rgba(226,244,2385,0.3)" />
+          <use href="#gentle-wave" x="48" y="7" fill="#e2f4ee" />
+        </g>
+      </svg>
     </div>
   );
 }

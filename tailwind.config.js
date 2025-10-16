@@ -20,6 +20,8 @@ export default {
         accentColor: "#10b981",
         accentColorHover: "#059669",
 
+        lightPrimary: "#e2f4ee",
+
         // Neutral / secondary
         grayText: "#64748b",
         grayTextDark: "#94a3b8",

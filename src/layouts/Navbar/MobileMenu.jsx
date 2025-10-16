@@ -17,35 +17,36 @@ export default function MobileMenu({
           className="fixed inset-x-0 top-0 bg-lightBg backdrop-blur-md text-center border-t border-gray-200 shadow-lg py-6 z-50 animate-slide-down"
         >
           <nav className="flex flex-col space-y-5 px-4 max-w-md mx-auto">
-            <Link
-              to="/"
-              className="relative text-lightText text-lg font-semibold hover:text-primaryHover transition-colors duration-navbar ease-in-out group"
-              onClick={() => setIsOpen(false)}
-            >
-              الرئيسية
-            </Link>
-
-            <Link
-              to="/about"
-              className="relative text-lightText text-lg font-semibold hover:text-primaryHover transition-colors duration-navbar ease-in-out group"
-              onClick={() => setIsOpen(false)}
-            >
-              من نحن
-            </Link>
-
-            <Link
-              to="/contact"
-              className="relative text-lightText text-lg font-semibold hover:text-primaryHover transition-colors duration-navbar ease-in-out group"
-              onClick={() => setIsOpen(false)}
-            >
-              تواصل معنا
-            </Link>
+            <div className="border-b border-gray-200">
+              <Link
+                to="/"
+                className="w-full flex items-center justify-center gap-0 py-2 text-lightText text-lg hover:text-primaryHover bg-transparent rounded-lg transition-all duration-navbar text-base font-medium group hover:bg-gray-100"
+                onClick={() => setIsOpen(false)}
+              >
+                الرئيسية
+              </Link>
+              <Link
+                to="/about"
+                className="w-full flex items-center justify-center gap-0 py-2 text-lightText text-lg hover:text-primaryHover bg-transparent rounded-lg transition-all duration-navbar text-base font-medium group hover:bg-gray-100"
+                onClick={() => setIsOpen(false)}
+              >
+                من نحن
+              </Link>
+              <Link
+                to="/contact"
+                className="w-full flex items-center justify-center gap-0 py-2 text-lightText text-lg hover:text-primaryHover bg-transparent rounded-lg transition-all duration-navbar text-base font-medium group hover:bg-gray-100"
+                onClick={() => setIsOpen(false)}
+              >
+                تواصل معنا
+              </Link>
+              s
+            </div>
 
             {/* ✅ Register button */}
             <Link
               to="/register"
               onClick={() => setIsOpen(false)}
-              className="relative bg-gradient-to-r from-primaryHover to-primary text-white px-6 py-3 rounded-lg transition-all duration-navbar shadow-md hover:shadow-lg text-base font-semibold overflow-hidden group"
+              className="relative bg-gradient-to-r from-primaryHover to-primary text-darkText px-6 py-3 rounded-lg transition-all duration-navbar shadow-md hover:shadow-lg hover:text-darkText font-semibold overflow-hidden group"
             >
               <span className="relative z-10">تسجيل</span>
               <span className="absolute inset-0 bg-gradient-to-r from-primary to-primaryHover opacity-0 group-hover:opacity-100 transition-opacity duration-navbar"></span>
@@ -55,14 +56,14 @@ export default function MobileMenu({
             <Link
               to="/login"
               onClick={() => setIsOpen(false)}
-              className="relative bg-gradient-to-r from-primary to-primaryHover text-white px-6 py-3 rounded-lg transition-all duration-navbar shadow-md hover:shadow-lg text-base font-semibold overflow-hidden group"
+              className="relative bg-gradient-to-r from-primary to-primaryHover text-darkText px-6 py-3 rounded-lg transition-all duration-navbar shadow-md hover:shadow-lg hover:text-darkText text-base font-semibold overflow-hidden group"
             >
               <span className="relative z-10">تسجيل الدخول</span>
               <span className="absolute inset-0 bg-gradient-to-r from-primaryHover to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-navbar"></span>
             </Link>
 
             <div className="border-t border-gray-200 pt-4">
-              <button
+              <Link
                 onClick={() => {
                   handleSupport();
                   setIsOpen(false);
@@ -74,9 +75,9 @@ export default function MobileMenu({
                   className="transition-transform duration-navbar"
                 />
                 <span>الدعم</span>
-              </button>
+              </Link>
 
-              <button
+              <Link
                 onClick={() => {
                   handleLicense();
                   setIsOpen(false);
@@ -88,7 +89,7 @@ export default function MobileMenu({
                   className="transition-transform duration-navbar"
                 />
                 <span>الرخصة</span>
-              </button>
+              </Link>
             </div>
           </nav>
         </div>

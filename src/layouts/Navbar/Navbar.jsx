@@ -8,8 +8,23 @@ import { Menu } from "lucide-react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const dropdownRef = useRef(null);
   const menuRef = useRef(null);
+
+  // 📌 Detect scroll beyond 100vh
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight - 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Support button
   const handleSupport = () => {
@@ -39,9 +54,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`w-full fixed top-0 left-0 z-50 h-[72px] bg-transparent text-darkText backdrop-blur-sm transition-all duration-navbar font-arabic`}
+      className={`w-full fixed top-0 left-0 z-50 h-[72px] text-darkText transition-all duration-navbar font-arabic flex justify-end
+        ${isScrolled ? "bg-darkBg" : "bg-transparent"}`}
     >
-      <div className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+      <div className="flex items-center justify-end px-6 py-4 max-w-7xl">
         {/* Logo */}
         <Link
           to="/"
@@ -52,7 +68,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex gap-10 items-center">
+        <nav className="w-full hidden md:flex gap-10 items-center justify-end">
           <NavbarLinks />
           <NavbarDropdown
             dropdownOpen={dropdownOpen}

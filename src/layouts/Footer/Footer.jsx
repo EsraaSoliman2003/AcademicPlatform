@@ -65,9 +65,9 @@ export default function Footer() {
               x2="100%"
               y2="100%"
             >
-              <stop offset="0%" stopColor="#ecfdf5" />
-              <stop offset="50%" stopColor="#f0fdf4" />
-              <stop offset="100%" stopColor="#cffafe" />
+              <stop offset="0%" stopColor="#f9fafb" />
+              <stop offset="50%" stopColor="#f9fafb" />
+              <stop offset="100%" stopColor="#f9fafb" />
             </linearGradient>
           </defs>
 

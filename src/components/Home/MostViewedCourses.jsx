@@ -12,7 +12,6 @@ export default function MostViewedCourses() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const colors = {
-    bg: "#f9fafb",
     text: "#1e293b",
     primary: "#10b981",
     gray: "#64748b",
@@ -115,17 +114,7 @@ export default function MostViewedCourses() {
   };
 
   return (
-    <section
-      className="py-20 relative overflow-hidden"
-      style={{ backgroundColor: colors.bg }}
-    >
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='${encodeURIComponent(colors.primary)}'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
-        }}
-      ></div>
-
+    <section className="py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
         <div className="mb-12">
           <h2

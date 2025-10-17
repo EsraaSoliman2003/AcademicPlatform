@@ -114,7 +114,7 @@ export default function Home() {
           <use href="#gentle-wave" x="48" y="0" fill="rgba(226,244,238,0.7)" />
           <use href="#gentle-wave" x="48" y="3" fill="rgba(226,244,2385,0.5)" />
           <use href="#gentle-wave" x="48" y="5" fill="rgba(226,244,2385,0.3)" />
-          <use href="#gentle-wave" x="48" y="7" fill="#e2f4ee" />
+          <use href="#gentle-wave" x="48" y="7" fill="#f9fafb" />
         </g>
       </svg>
     </div>

@@ -1,0 +1,9 @@
+input::placeholder {
+  color: #9ca3af;
+  transition: color 300ms ease-in-out;
+}
+
+input:hover::placeholder,
+input:focus::placeholder {
+  color: #10b981;
+}

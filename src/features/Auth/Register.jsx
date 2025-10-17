@@ -1,95 +1,64 @@
 import { useState } from "react";
 import { useAuthStore } from "./store";
 import { useNavigate } from "react-router-dom";
+import AuthContainer from "../../components/Auth/AuthContainer";
+import AuthInput from "../../components/Auth/AuthInput";
+import AuthActions from "../../components/Auth/AuthActions";
+import "./Auth.css";
 
 export default function Register() {
-  const [formData, setFormData] = useState({
+  const [form, setForm] = useState({
     name: "",
     email: "",
     password: "",
-    password_confirmation: "",
   });
-
   const register = useAuthStore((state) => state.register);
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await register(formData);
-    if (res) navigate("/login");
+    const success = await register(form);
+    if (success) navigate("/profile");
   };
 
   return (
-    <div
-      dir="rtl"
-      className="flex items-center justify-center bg-lightBg transition-colors duration-navbar"
-    >
-      <form
-        className="flex flex-col gap-4 p-8 bg-white rounded-2xl shadow-lg w-80 transition-all duration-navbar"
-        onSubmit={handleSubmit}
-      >
-        <h2 className="text-2xl font-bold text-primary text-center mb-2">
-          التسجيل
-        </h2>
-
-        <input
+    <AuthContainer title="إنشاء حساب جديد">
+      <form onSubmit={handleSubmit} dir="rtl" className="space-y-8">
+        <AuthInput
           type="text"
-          name="name"
           placeholder="الاسم الكامل"
-          value={formData.name}
+          value={form.name}
           onChange={handleChange}
-          required
-          className="p-2 border rounded"
+          iconPath="M5.121 17.804A13.937 13.937 0 0112 15c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
+          name="name"
         />
-        <input
+        <AuthInput
           type="email"
-          name="email"
           placeholder="البريد الإلكتروني"
-          value={formData.email}
+          value={form.email}
           onChange={handleChange}
-          required
-          className="p-2 border rounded"
+          iconPath="M16 12a4 4 0 10-8 0 4 4 0 008 0z"
+          name="email"
         />
-        <input
+        <AuthInput
           type="password"
+          placeholder="كلمة المرور"
+          value={form.password}
+          onChange={handleChange}
+          iconPath="M12 15v2m-6 4h12..."
           name="password"
-          placeholder="كلمة السر"
-          value={formData.password}
-          onChange={handleChange}
-          required
-          className="p-2 border rounded"
-        />
-        <input
-          type="password"
-          name="password_confirmation"
-          placeholder="تأكيد كلمة السر"
-          value={formData.password_confirmation}
-          onChange={handleChange}
-          required
-          className="p-2 border rounded"
         />
 
-        <button
-          type="submit"
-          className="bg-primary hover:bg-primaryHover text-white rounded-lg py-2 mt-2"
-        >
-          التسجيل
-        </button>
-
-        <p className="text-sm text-center mt-2 text-gray-500">
-          لديك حساب بالفعل؟
-          <span
-            onClick={() => navigate("/login")}
-            className="text-primary cursor-pointer hover:underline"
-          >
-            تسجيل الدخول
-          </span>
-        </p>
+        <AuthActions
+          buttonText="إنشاء الحساب"
+          bottomText="لديك حساب بالفعل؟"
+          bottomLinkText="تسجيل الدخول"
+          bottomLinkHref="/login"
+        />
       </form>
-    </div>
+    </AuthContainer>
   );
 }

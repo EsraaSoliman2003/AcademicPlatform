@@ -4,6 +4,7 @@ import NavbarLinks from "./NavbarLinks";
 import NavbarDropdown from "./NavbarDropdown";
 import MobileMenu from "./MobileMenu";
 import { Menu } from "lucide-react";
+import logo from "../../assets/logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,17 +55,17 @@ export default function Navbar() {
 
   return (
     <header
-      className={`w-full fixed top-0 left-0 z-50 h-[72px] text-darkText transition-all duration-navbar font-arabic flex justify-end
+      className={`w-full fixed top-0 left-0 z-50 h-[72px] text-darkText transition-all duration-navbar font-arabic flex
         ${isScrolled ? "bg-darkBg" : "bg-transparent"}`}
     >
-      <div className="flex items-center justify-end px-6 py-4 max-w-7xl">
+      <div className="w-full flex items-center px-6 py-4">
         {/* Logo */}
-        <Link
-          to="/"
-          className="text-2xl font-bold text-primary hover:text-primaryHover transition-colors duration-navbar relative group"
-        >
-          {/* MyStructure */}
-          <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-primaryHover transition-all duration-navbar group-hover:w-full"></span>
+        <Link to="/">
+          <img
+            src={logo}
+            alt="Rafiq Academy Logo"
+            className="w-32 h-32 object-contain"
+          />
         </Link>
 
         {/* Desktop Menu */}

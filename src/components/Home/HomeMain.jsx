@@ -1,10 +1,33 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import libraryBg from "../../assets/library.jpg";
 import personImg from "../../assets/person.png";
 import styles from "./animation.module.css";
 import { Search } from "lucide-react";
 
 export default function Home() {
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  const texts = [
+    "نقدم لك أفضل المنصات التعليمية لتطوير مهاراتك والوصول لأقصى إمكانياتك. اكتشف الدورات، المشاريع، والموارد التي تساعدك على التعلم بشكل عملي واحترافي.",
+    "انطلق في رحلة التعلم مع أحدث التقنيات وأساليب التعليم الحديثة. طور نفسك في مجالات البرمجة، التصميم، الذكاء الاصطناعي وغيرها.",
+    "انضم إلى مجتمعنا التعليمي المتطور وكن جزءاً من شبكة من المحترفين. احصل على شهادات معتمدة تعزز مسيرتك المهنية.",
+    "تعلم بالسرعة التي تناسبك مع مرونة كاملة في الوصول للمحتوى. مواد تعليمية شاملة تناسب جميع المستويات.",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      setTimeout(() => {
+        setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+        setIsVisible(true);
+      }, 500);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [texts.length]);
+
   return (
     <div
       className="relative w-full h-screen flex items-center justify-center overflow-hidden"
@@ -37,11 +60,17 @@ export default function Home() {
             مرحباً بكم في منصتنا
           </h1>
 
-          <p className="text-white/80 mb-6 max-w-md md:max-w-lg mx-auto xl:mx-0 text-base md:text-lg leading-relaxed">
-            نقدم لك أفضل المنصات التعليمية لتطوير مهاراتك والوصول لأقصى
-            إمكانياتك. اكتشف الدورات، المشاريع، والموارد التي تساعدك على التعلم
-            بشكل عملي واحترافي.
-          </p>
+          <div className="h-24 mb-6 flex items-center justify-center xl:justify-end">
+            <p
+              className={`
+                text-white/80 max-w-md md:max-w-lg mx-auto xl:mx-0 text-base md:text-lg leading-relaxed
+                transition-all duration-500 ease-in-out
+                ${isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform -translate-y-4"}
+              `}
+            >
+              {texts[currentTextIndex]}
+            </p>
+          </div>
 
           <div
             dir="rtl"

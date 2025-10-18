@@ -10,29 +10,29 @@ export default function ContactUs() {
         <div className="lg:w-1/2 flex flex-col">
           <div className="mb-8">
             <div className="inline-block bg-gradient-to-r from-primary to-accentColor p-1 rounded-full mb-4">
-              <div className="bg-white dark:bg-darkBg rounded-full p-3">
+              <div className="bg-white rounded-full p-3">
                 <span className="text-2xl">📞</span>
               </div>
             </div>
-            <h1 className="text-4xl font-bold text-lightText dark:text-darkText mb-4">
+            <h1 className="text-4xl font-bold text-lightText mb-4">
               تواصل معنا
             </h1>
             <div className="w-16 h-1 bg-gradient-to-r from-primary to-accentColor rounded-full mr-0 ml-auto"></div>
           </div>
 
-          <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 mb-8 border border-gray-100 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-white rounded-2xl p-8 mb-8 border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div className="text-3xl text-primary text-right mb-4">💬</div>
-            <p className="text-grayText dark:text-grayTextDark leading-relaxed text-lg text-right">
+            <p className="text-grayText leading-relaxed text-lg text-right">
               نحن هنا لمساعدتك! لا تتردد في التواصل معنا لأي استفسار أو لبدء
               مشروعك القادم. فريقنا مستعد للرد عليك في أقرب وقت.
             </p>
           </div>
 
-          <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 shadow-md hover:shadow-lg transition-shadow duration-300">
-            <h3 className="text-lg font-semibold text-lightText dark:text-darkText mb-4 text-right">
+          <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-md hover:shadow-lg transition-shadow duration-300">
+            <h3 className="text-lg font-semibold text-lightText mb-4 text-right">
               أوقات العمل
             </h3>
-            <div className="space-y-2 text-grayText dark:text-grayTextDark text-right">
+            <div className="space-y-2 text-grayText text-right">
               <div className="flex justify-between">
                 <span>الأحد - الخميس</span>
                 <span>9:00 ص - 6:00 م</span>
@@ -61,19 +61,17 @@ export default function ContactUs() {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="bg-gradient-to-br from-lightPrimary to-white dark:from-slate-800 dark:to-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-gradient-to-br from-lightPrimary to-white rounded-2xl p-6 border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300"
             >
               <div className="flex items-center gap-4">
                 <div className="bg-primary/10 rounded-full p-3">
                   <span className="text-xl">{item.icon}</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lightText dark:text-darkText text-lg">
+                  <h3 className="font-semibold text-lightText text-lg">
                     {item.title}
                   </h3>
-                  <p className="text-grayText dark:text-grayTextDark">
-                    {item.value}
-                  </p>
+                  <p className="text-grayText">{item.value}</p>
                 </div>
               </div>
             </div>

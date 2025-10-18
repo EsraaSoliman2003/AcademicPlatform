@@ -2,7 +2,7 @@ export default function About() {
   return (
     <div
       dir="rtl"
-      className="min-h-screen bg-lightBg dark:bg-darkBg flex items-center justify-center mt-10 py-16 px-6"
+      className="min-h-screen bg-lightBg flex items-center justify-center mt-10 py-16 px-6"
     >
       <div className="max-w-6xl w-full">
         <div className="flex flex-col lg:flex-row gap-8 items-start">

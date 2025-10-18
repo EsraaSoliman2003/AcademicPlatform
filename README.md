@@ -7,7 +7,7 @@ A modern, responsive, and interactive React + Tailwind CSS project setup for Etq
 ## 📁 Project Structure
 
 ```
-SmartERP/
+Rafeeq/
 ├── public/                     # Public assets (images, favicon, etc.)
 │   └── icon.png                # Favicon
 ├── src/

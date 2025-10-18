@@ -6,7 +6,7 @@ import PrivateRoute from "./PrivateRoute";
 import NotFound from "../pages/NotFound";
 import Profile from "../pages/Profile";
 import Register from "../features/Auth/Register";
-import ForgetPassword from "../features/Auth/forgetPassword";
+import ForgetPassword from "../features/Auth/ForgetPassword";
 import ContactUs from "../pages/ContactUs";
 
 export default function AppRouter() {

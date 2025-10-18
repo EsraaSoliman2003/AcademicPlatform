@@ -5,7 +5,7 @@ import personImg from "../../assets/imgs/person.png";
 import styles from "../../assets/animation/animation.module.css";
 import { Search } from "lucide-react";
 
-export default function Home() {
+export default function HomeMain() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
 

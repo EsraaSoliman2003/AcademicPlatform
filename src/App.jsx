@@ -4,7 +4,7 @@ import MainLayout from "./layouts/MainLayout";
 
 function App() {
   const location = useLocation();
-  const noLayoutRoutes = ["/login", "/register"];
+  const noLayoutRoutes = ["/login", "/register", "/forget-password"];
   const isNoLayout = noLayoutRoutes.includes(location.pathname);
 
   return isNoLayout ? (

@@ -18,20 +18,20 @@ Rafeeq/
 │   │   └── animation/          # Animations from Lottie
 │   ├── components/             # Reusable UI components
 │   │   ├── Home/             # Navigation bar components
-│   │   │   ├── HomeMain.jsx   
+│   │   │   ├── HomeMain.jsx
 │   │   │   ├── CategoriesSection.jsx
-│   │   │   ├── CategoryCard.jsx      
+│   │   │   ├── CategoryCard.jsx
 │   │   │   ├── MostViewedCourses.jsx
-│   │   │   ├── CourseCard.jsx  
+│   │   │   ├── CourseCard.jsx
 │   │   │   ├── CustomPagination.jsx
 │   │   │   ├── NavigationButtons.jsx
 │   │   └── Auth/
-│   │       ├── AuthActions.jsx      
-│   │       ├── AuthContainer.jsx 
-│   │       └── AuthInput.jsx        
+│   │       ├── AuthActions.jsx
+│   │       ├── AuthContainer.jsx
+│   │       └── AuthInput.jsx
 │   ├── features/               # Feature-specific modules
 │   │   └──── auth/
-│   │       ├── Auth.css       
+│   │       ├── Auth.css
 │   │       ├── login.jsx       # Login component
 │   │       ├── register.jsx    # Register component
 │   │       └── store.js        # Auth-related state management
@@ -39,15 +39,21 @@ Rafeeq/
 │   │   └── useFetch.js         # Hook for fetching data
 │   ├── layouts/                # Layout components
 │   │   ├── Navbar/             # Navigation bar components
-│   │   │   ├── Navbar.jsx      # Navbar component
-│   │   │   ├── Navbar.module.css
-│   │   │   └── index.js
+│   │   ├── Navbar.jsx
+│   │   ├── DesktopNavbar.jsx
+│   │   ├── MobileMenu.jsx
+│   │   ├── NavbarLinksSwitcher.jsx
+│   │   ├── NavbarLinks/
+│   │   │   ├── GuestLinks.jsx
+│   │   │   ├── UserLinks.jsx
+│   │   │   ├── TeacherLinks.jsx
+│   │   │   └── AdminLinks.jsx
 │   │   ├── Fotter/             # Navigation bar components
 │   │   │   └── Fotter.js
 │   │   └── MainLayout.jsx      # Main layout with header and footer
 │   ├── pages/                  # Page-level components
-│   │   ├── Home.jsx 
-│   │   ├── About.jsx 
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
 │   │   ├── Projects.jsx
 │   │   ├── Contact.jsx
 │   │   └── NotFound.jsx.jsx
@@ -63,7 +69,7 @@ Rafeeq/
 │   ├── main.jsx                # Application entry point
 ├── .env                        # Environment variables
 ├── .gitignore                  # Files to ignore in Git
-├── index.html          
+├── index.html
 ├── package.json                # Project metadata and dependencies
 ├── README.md                   # This file
 └── tailwind.config.js          # Set main colors
@@ -111,16 +117,14 @@ Rafeeq/
 
 ---
 
-
 ## 🎨 Tech Stack
 
-- ⚛️ **React 19** — Frontend library  
-- ⚡ **Vite** — Fast build tool  
-- 💅 **Tailwind CSS** — Utility-first CSS framework  
-- 🧩 **React Router DOM** — Routing and navigation  
-- 🧠 **Zustand** — Lightweight and scalable state management  
-- 📡 **Axios** — HTTP client for API requests  
-
+- ⚛️ **React 19** — Frontend library
+- ⚡ **Vite** — Fast build tool
+- 💅 **Tailwind CSS** — Utility-first CSS framework
+- 🧩 **React Router DOM** — Routing and navigation
+- 🧠 **Zustand** — Lightweight and scalable state management
+- 📡 **Axios** — HTTP client for API requests
 
 ---
 

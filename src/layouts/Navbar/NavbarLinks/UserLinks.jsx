@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-
 export default function UserLinks({ isMobile, onLinkClick }) {
   const links = [
     { key: "home", label: "الرئيسية", path: "/" },
+    { key: "about", label: "من نحن", path: "/about" },
+    { key: "contact", label: "تواصل معنا", path: "/contact" },
     { key: "courses", label: "دوراتي", path: "/courses" },
     { key: "profile", label: "الملف الشخصي", path: "/profile" },
   ];
@@ -35,10 +36,10 @@ export default function UserLinks({ isMobile, onLinkClick }) {
         <Link
           to="/logout"
           onClick={onLinkClick}
-          className="relative bg-gradient-to-r from-primary to-primaryHover text-darkText px-5 py-2.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:text-darkText text-sm font-medium overflow-hidden group"
+          className="relative bg-gradient-to-r from-red-500 to-red-600 text-white px-5 py-2.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm font-medium overflow-hidden group"
         >
           <span className="relative z-10">تسجيل الخروج</span>
-          <span className="absolute inset-0 bg-gradient-to-r from-primaryHover to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <span className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
         </Link>
       </div>
     </>

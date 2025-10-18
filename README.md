@@ -9,71 +9,64 @@ A modern, responsive, and interactive React + Tailwind CSS project setup for Etq
 ```
 SmartERP/
 ├── public/                     # Public assets (images, favicon, etc.)
-│   ├── images/                 # Static images for projects, profile, etc.
 │   └── icon.png                # Favicon
 ├── src/
 │   ├── api/                    # API call logic and configurations
 │   │   └── axios.js            # Axios instance for API requests
 │   ├── assets/                 # Compiled assets (used in code)
+│   │   ├── imgs/                 # Static images for projects, profile, etc.
 │   │   └── animation/          # Animations from Lottie
 │   ├── components/             # Reusable UI components
-│   │   └── Button/
-│   │       ├── Button.jsx      # Button component
-│   │       ├── Button.module.css # Component-specific styles
-│   │       └── index.js        # Barrel export
+│   │   ├── Home/             # Navigation bar components
+│   │   │   ├── HomeMain.jsx   
+│   │   │   ├── CategoriesSection.jsx
+│   │   │   ├── CategoryCard.jsx      
+│   │   │   ├── MostViewedCourses.jsx
+│   │   │   ├── CourseCard.jsx  
+│   │   │   ├── CustomPagination.jsx
+│   │   │   ├── NavigationButtons.jsx
+│   │   └── Auth/
+│   │       ├── AuthActions.jsx      
+│   │       ├── AuthContainer.jsx 
+│   │       └── AuthInput.jsx        
 │   ├── features/               # Feature-specific modules
 │   │   └──── auth/
+│   │       ├── Auth.css       
 │   │       ├── login.jsx       # Login component
 │   │       ├── register.jsx    # Register component
 │   │       └── store.js        # Auth-related state management
 │   ├── hooks/                  # Custom React hooks
 │   │   └── useFetch.js         # Hook for fetching data
 │   ├── layouts/                # Layout components
-│   │   ├── navbar/             # Navigation bar components
+│   │   ├── Navbar/             # Navigation bar components
 │   │   │   ├── Navbar.jsx      # Navbar component
 │   │   │   ├── Navbar.module.css
 │   │   │   └── index.js
+│   │   ├── Fotter/             # Navigation bar components
+│   │   │   └── Fotter.js
 │   │   └── MainLayout.jsx      # Main layout with header and footer
-│   ├── locales/                # Internationalization files
-│   │   ├── ar.json             # Arabic translations
-│   │   └── en.json             # English translations
 │   ├── pages/                  # Page-level components
-│   │   ├── Home/
-│   │   │   ├── Home.jsx        # Home page
-│   │   │   ├── Home.module.css
-│   │   │   └── index.js
-│   │   ├── About/
-│   │   │   ├── About.jsx       # About page
-│   │   │   ├── About.module.css
-│   │   │   └── index.js
-│   │   ├── Projects/
-│   │   │   ├── Projects.jsx    # Projects page
-│   │   │   ├── Projects.module.css
-│   │   │   └── index.js
-│   │   ├── Technologies/
-│   │   │   ├── Technologies.jsx # Technologies page
-│   │   │   ├── Technologies.module.css
-│   │   │   └── index.js
-│   │   └── Contact/
-│   │       ├── Contact.jsx     # Contact page
-│   │       ├── Contact.module.css
-│   │       └── index.js
+│   │   ├── Home.jsx 
+│   │   ├── About.jsx 
+│   │   ├── Projects.jsx
+│   │   ├── Contact.jsx
+│   │   └── NotFound.jsx.jsx
 │   ├── router/                 # Routing logic
 │   │   ├── approuter.jsx       # Centralized route definitions
 │   │   └── privateroute.jsx    # Protected routes for authenticated users
 │   ├── store/                  # State management
-│   │   └── themeStore.js       # Theme-related state management
+│   │   └── snackbarStore.js
 │   ├── utils/                  # Helper functions
 │   │   └── helpers.js          # Utility functions (e.g., formatDate)
-│   ├── index.css                 # Global styles
 │   ├── App.jsx                 # Main app component
+│   ├── index.css                 # Global styles
 │   ├── main.jsx                # Application entry point
-│   └── i18n.js                 # Internationalization setup
 ├── .env                        # Environment variables
-├── vite.config.js              # Vite configuration
+├── .gitignore                  # Files to ignore in Git
+├── index.html          
 ├── package.json                # Project metadata and dependencies
 ├── README.md                   # This file
-└── .gitignore                  # Files to ignore in Git
+└── tailwind.config.js          # Set main colors
 ```
 
 ---
@@ -118,18 +111,6 @@ SmartERP/
 
 ---
 
-## 🎨 Tech Stack
-
-- ⚛️ **React 19** — Frontend library
-- ⚡ **Vite** — Fast build tool
-- 💅 **Tailwind CSS** — Utility-first CSS framework
-- 🧩 **React Router DOM** — Routing and navigation
-- 🧠 **Context API** — Global state management
-- 🌐 **i18next** — Internationalization for multilingual support
-- 📡 **Axios** — HTTP client for API requests
-
----
-
 
 ## 🎨 Tech Stack
 
@@ -138,7 +119,6 @@ SmartERP/
 - 💅 **Tailwind CSS** — Utility-first CSS framework  
 - 🧩 **React Router DOM** — Routing and navigation  
 - 🧠 **Zustand** — Lightweight and scalable state management  
-- 🌐 **i18next** — Internationalization for multilingual support  
 - 📡 **Axios** — HTTP client for API requests  
 
 

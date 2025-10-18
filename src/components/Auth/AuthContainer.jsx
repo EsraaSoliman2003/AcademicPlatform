@@ -1,4 +1,4 @@
-import libraryBg from "../../assets/library.jpg";
+import libraryBg from "../../assets/imgs/library.jpg";
 
 export default function AuthContainer({ title, subtitle, children }) {
   return (

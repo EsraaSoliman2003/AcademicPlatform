@@ -4,7 +4,7 @@ import NavbarLinks from "./NavbarLinks";
 import NavbarDropdown from "./NavbarDropdown";
 import MobileMenu from "./MobileMenu";
 import { Menu } from "lucide-react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/imgs/logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import libraryBg from "../../assets/library.jpg";
-import personImg from "../../assets/person.png";
-import styles from "./animation.module.css";
+import libraryBg from "../../assets/imgs/library.jpg";
+import personImg from "../../assets/imgs/person.png";
+import styles from "../../assets/animation/animation.module.css";
 import { Search } from "lucide-react";
 
 export default function Home() {

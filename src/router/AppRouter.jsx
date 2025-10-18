@@ -6,6 +6,7 @@ import PrivateRoute from "./PrivateRoute";
 import NotFound from "../pages/NotFound";
 import Profile from "../pages/Profile";
 import Register from "../features/Auth/Register";
+import ForgetPassword from "../features/Auth/forgetPassword";
 
 export default function AppRouter() {
   return (
@@ -14,6 +15,7 @@ export default function AppRouter() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/forget-password" element={<ForgetPassword />} />
       <Route path="/about" element={<About />} />
 
       {/* Protected Pages */}

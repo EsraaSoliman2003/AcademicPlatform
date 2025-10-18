@@ -46,7 +46,7 @@ export default function Login() {
             <span>تذكرني</span>
           </label>
           <a
-            href="/register"
+            href="/forget-password"
             className="text-primary hover:text-primaryHover transition"
           >
             نسيت كلمة المرور؟

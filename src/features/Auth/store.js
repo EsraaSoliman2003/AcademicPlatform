@@ -36,6 +36,27 @@ export const useAuthStore = create((set) => ({
     }
   },
 
+  forgetPassword: async (email) => {
+    const { showSnackbar } = useSnackbarStore.getState();
+    try {
+      const formData = new FormData();
+      formData.append("email", email);
+
+      const res = await api.post("/password/forget-password", formData, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      showSnackbar("Password reset link sent successfully!", "success");
+      return res.data;
+    } catch (err) {
+      console.error(err);
+      showSnackbar("Failed to send reset link. Check the email.", "error");
+      return null;
+    }
+  },
+
   logout: async () => {
     const { showSnackbar } = useSnackbarStore.getState();
     try {

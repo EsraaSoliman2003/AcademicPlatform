@@ -25,6 +25,35 @@ Rafeeq/
 │   │   │   ├── CourseCard.jsx
 │   │   │   ├── CustomPagination.jsx
 │   │   │   ├── NavigationButtons.jsx
+│   │   ├── AdminDashboard/
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── Header.jsx
+│   │   │   ├── StatsCards.jsx
+│   │   │   ├── CoursesTable.jsx
+│   │   │   ├── UsersTable.jsx
+│   │   │   └── UniversityManager.jsx
+│   │   ├── Courses/
+│   │   │   ├── CoursesCard.jsx
+│   │   │   ├── CoursesList.jsx
+│   │   │   ├── CoursesHeader.jsx
+│   │   │   ├── CoursesFilter.jsx
+│   │   │   ├── UniversitySection.jsx
+│   │   │   ├── EmptyState.jsx
+│   │   │   └── Pagination.jsx
+│   │   ├── CourseDetails/
+│   │   │   ├── CourseInfoSidebar.jsx
+│   │   │   ├── VideoPlayer.jsx
+│   │   │   ├── VideoList.jsx
+│   │   │   ├── CourseIntro.jsx
+│   │   │   └── CourseDetails
+│   │   ├── Profile/
+│   │   │   ├── ChangePasswordModal.jsx
+│   │   │   ├── EditProfileModal.jsx
+│   │   │   ├── ProfileHeader.jsx
+│   │   │   ├── PersonalInfo.jsx
+│   │   │   ├── CoursesSection.jsx
+│   │   │   ├── ProgressStats.jsx
+│   │   │   └── SettingsSection.jsx
 │   │   └── Auth/
 │   │       ├── AuthActions.jsx
 │   │       ├── AuthContainer.jsx
@@ -54,8 +83,16 @@ Rafeeq/
 │   ├── pages/                  # Page-level components
 │   │   ├── Home.jsx
 │   │   ├── About.jsx
-│   │   ├── Projects.jsx
 │   │   ├── Contact.jsx
+│   │   ├── Projects.jsx
+│   │   ├── CourseDetails.jsx
+│   │   ├── Courses.jsx
+│   │   ├── Admin/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── ManageCourses.jsx
+│   │   │   ├── ManageUsers.jsx
+│   │   │   └── ManageUniversities.jsx
+│   │   │   └── Reports.jsx
 │   │   └── NotFound.jsx.jsx
 │   ├── router/                 # Routing logic
 │   │   ├── approuter.jsx       # Centralized route definitions

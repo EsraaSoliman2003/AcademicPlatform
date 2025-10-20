@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function About() {
   return (
     <div
@@ -74,9 +76,9 @@ export default function About() {
               </div>
 
               <div className="text-right mt-8">
-                <button className="bg-primary hover:bg-primaryHover text-white border-none hover:border-none px-8 py-3 rounded-xl font-medium transition-colors duration-300 shadow-md hover:shadow-lg focus:outline-none">
+                <Link to={"/contact"} className="bg-primary hover:bg-primaryHover hover:text-white text-white border-none hover:border-none px-8 py-3 rounded-xl font-medium transition-colors duration-300 shadow-md hover:shadow-lg focus:outline-none">
                   تواصل معنا
-                </button>
+                </Link>
               </div>
             </div>
 

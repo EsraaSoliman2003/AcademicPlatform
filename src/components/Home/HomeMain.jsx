@@ -91,7 +91,7 @@ export default function HomeMain() {
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primaryHover/20 rounded-2xl blur-sm group-hover:blur-md transition-all duration-300 -z-10"></div>
           </div>
 
-          <Link className="bg-primary text-darkText hover:text-darkText px-6 py-3 rounded-lg hover:bg-primaryHover transition-all w-fit mx-auto xl:mx-0">
+          <Link to={"/courses"} className="bg-primary text-darkText hover:text-darkText px-6 py-3 rounded-lg hover:bg-primaryHover transition-all w-fit mx-auto xl:mx-0">
             ابدأ الآن
           </Link>
         </div>

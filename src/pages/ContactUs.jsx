@@ -77,10 +77,10 @@ export default function ContactUs() {
             </div>
           ))}
 
-          <div className="mt-4 text-center">
-            <button className="bg-primary hover:bg-primaryHover border-none hover:border-none text-white px-8 py-3 rounded-xl font-medium transition-colors duration-300 shadow-md hover:shadow-lg">
-              تواصل معنا
-            </button>
+          <div className="mt-6 text-center">
+            <p className="text-grayText text-lg font-medium">
+              💬 نحن بانتظار رسالتك — تواصل معنا في أي وقت يناسبك.
+            </p>
           </div>
         </div>
       </div>

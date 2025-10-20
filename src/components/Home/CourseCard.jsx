@@ -1,8 +1,18 @@
 import { Eye, Star, Users, Clock } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const CourseCard = ({ course, colors }) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/courses/${course.id}`);
+  };
+
   return (
-    <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer border relative">
+    <div
+      onClick={handleCardClick}
+      className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer border relative"
+    >
       <div className="relative overflow-hidden">
         <img
           src={course.image}

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CategoryCard({
   icon,
@@ -9,9 +10,16 @@ export default function CategoryCard({
   stats,
   onClick,
 }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/courses`);
+  };
+
   return (
     <div
-      className={`relative group bg-white/90 rounded-[2rem] shadow-xl border border-transparent hover:border-primary/40 transition-all duration-500 overflow-hidden hover:-translate-y-2 hover:rotate-1`}
+      onClick={handleCardClick}
+      className={`relative group bg-white/90 rounded-[2rem] shadow-xl border border-transparent hover:border-primary/40 transition-all duration-500 overflow-hidden hover:-translate-y-2 hover:rotate-1 cursor-pointer`}
     >
       <div
         className={`absolute top-0 right-0 w-1/2 h-full bg-gradient-to-br ${gradient} opacity-10 skew-x-12`}

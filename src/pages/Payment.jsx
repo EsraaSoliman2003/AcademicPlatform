@@ -26,7 +26,7 @@ export default function Payment() {
     //   return;
     // }
 
-    showSnackbar("✅ تم الدفع بنجاح! تم إضافة الكورس إلى حسابك.", "success");
+    showSnackbar("تم الدفع بنجاح، تم إضافة الكورس إلى حسابك", "success");
     navigate("/courses");
   };
 

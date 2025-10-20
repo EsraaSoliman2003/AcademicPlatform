@@ -36,7 +36,7 @@ export default function MostViewedCourses() {
       navigate(`/payment`);
       handleCloseModal();
     } else {
-      showSnackbar("✅ تم إضافة الكورس إلى ملفك الشخصي بنجاح", "success");
+      showSnackbar("تم إضافة الكورس إلى ملفك الشخصي بنجاح", "success");
       handleCloseModal();
     }
   };

@@ -9,7 +9,7 @@ export default function CourseList({ courses }) {
 
   const handleEnroll = (course) => {
     if (course.price === 0) {
-      showSnackbar("✅ تم إضافة الكورس إلى حسابك الشخصي!", "success");
+      showSnackbar("تم إضافة الكورس إلى حسابك الشخصي", "success");
       setSelectedCourse(null);
     } else {
       window.location.href = "/payment";

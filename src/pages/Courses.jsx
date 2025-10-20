@@ -33,7 +33,7 @@ export default function Courses() {
               "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=500&q=80",
             category: "برمجة",
             level: "متقدم",
-            price: 149,
+            price: 0,
             originalPrice: 299,
             rating: 4.9,
             students: 856,

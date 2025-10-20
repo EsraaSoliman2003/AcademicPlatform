@@ -54,6 +54,9 @@ Rafeeq/
 │   │   │   ├── CoursesSection.jsx
 │   │   │   ├── ProgressStats.jsx
 │   │   │   └── SettingsSection.jsx
+│   │   ├── Snackbar/
+│   │   │   ├── CustomSnackbar.jsx
+│   │   │   └── CustomSnackbar.module.css
 │   │   └── Auth/
 │   │       ├── AuthActions.jsx
 │   │       ├── AuthContainer.jsx

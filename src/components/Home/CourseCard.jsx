@@ -1,16 +1,9 @@
 import { Eye, Star, Users, Clock } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
-const CourseCard = ({ course, colors }) => {
-  const navigate = useNavigate();
-
-  const handleCardClick = () => {
-    navigate(`/courses/${course.id}`);
-  };
-
+const CourseCard = ({ course, colors, onClick }) => {
   return (
     <div
-      onClick={handleCardClick}
+      onClick={onClick}
       className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer border relative"
     >
       <div className="relative overflow-hidden">
@@ -89,6 +82,7 @@ const CourseCard = ({ course, colors }) => {
               {course.original}
             </span>
           </div>
+
           <button
             className="px-4 py-2 rounded-lg text-white text-sm font-medium transition-all duration-300 hover:scale-105 relative overflow-hidden group"
             style={{

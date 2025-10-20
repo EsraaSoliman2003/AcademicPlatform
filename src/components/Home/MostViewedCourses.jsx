@@ -3,6 +3,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import CourseCard from "./CourseCard";
 import CustomPagination from "./CustomPagination";
+import CourseModal from "../Courses/CourseModal";
+import { useSnackbarStore } from "../../store/snackbarStore";
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -10,11 +13,36 @@ import "swiper/css/pagination";
 export default function MostViewedCourses() {
   const swiperRef = useRef();
   const [activeIndex, setActiveIndex] = useState(0);
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  const { showSnackbar } = useSnackbarStore();
+  const navigate = useNavigate();
 
   const colors = {
     text: "#1e293b",
     primary: "#10b981",
     gray: "#64748b",
+  };
+
+  const handleCourseClick = (course) => {
+    setSelectedCourse(course);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedCourse(null);
+  };
+
+  const handleEnroll = (course) => {
+    if (course.price !== "مجاني" && !course.price.toString().includes("0")) {
+      navigate(`/payment`);
+      handleCloseModal();
+    } else {
+      showSnackbar("✅ تم إضافة الكورس إلى ملفك الشخصي بنجاح", "success");
+      handleCloseModal();
+    }
+  };
+
+  const handleBulletClick = (index) => {
+    swiperRef.current?.slideTo(index);
   };
 
   const courses = [
@@ -57,7 +85,7 @@ export default function MostViewedCourses() {
       rating: 4.7,
       students: 645,
       duration: "18 ساعة",
-      price: "99 ريال",
+      price: "مجاني",
       original: "199 ريال",
       level: "مبتدئ",
       description:
@@ -109,10 +137,6 @@ export default function MostViewedCourses() {
     },
   ];
 
-  const handleBulletClick = (index) => {
-    swiperRef.current?.slideTo(index);
-  };
-
   return (
     <section className="py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
@@ -132,48 +156,47 @@ export default function MostViewedCourses() {
           </p>
         </div>
 
-        <div className="relative">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={24}
-            slidesPerView={1}
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
-            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 24,
-              },
-            }}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-              el: ".custom-pagination",
-            }}
-            className="pb-12"
-          >
-            {courses.map((course) => (
-              <SwiperSlide key={course.id}>
-                <CourseCard course={course} colors={colors} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={24}
+          slidesPerView={1}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+          breakpoints={{
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 24 },
+          }}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          pagination={{ clickable: true, el: ".custom-pagination" }}
+          className="pb-12"
+        >
+          {courses.map((course) => (
+            <SwiperSlide key={course.id}>
+              <CourseCard
+                course={course}
+                colors={colors}
+                onClick={() => handleCourseClick(course)}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-          <CustomPagination
-            colors={colors}
-            totalSlides={courses.length}
-            activeIndex={activeIndex}
-            onBulletClick={handleBulletClick}
-          />
-        </div>
+        <CustomPagination
+          colors={colors}
+          totalSlides={courses.length}
+          activeIndex={activeIndex}
+          onBulletClick={handleBulletClick}
+        />
       </div>
+
+      {/* مودال الكورس */}
+      {selectedCourse && (
+        <CourseModal
+          course={selectedCourse}
+          onClose={handleCloseModal}
+          onEnroll={handleEnroll}
+        />
+      )}
     </section>
   );
 }

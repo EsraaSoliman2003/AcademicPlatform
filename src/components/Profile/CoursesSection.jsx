@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CoursesSection() {
+  const navigate = useNavigate();
+
   const courses = [
     {
       id: 1,
@@ -92,7 +95,6 @@ export default function CoursesSection() {
       description: "أنشئ تطبيقات جوال سريعة وجذابة باستخدام Flutter و Dart.",
     },
   ];
-
   return (
     <section className="bg-white rounded-2xl shadow-md p-6 mb-8">
       <h3 className="text-xl font-semibold text-red-600 mb-4 border-b border-gray-200 pb-2">
@@ -101,6 +103,7 @@ export default function CoursesSection() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {courses.map((course) => (
           <div
+            onClick={() => navigate(`/courses/${course.id}`)}
             key={course.id}
             className="p-4 border border-gray-200 rounded-xl hover:shadow-lg transition cursor-pointer"
           >
@@ -110,7 +113,9 @@ export default function CoursesSection() {
               className="rounded-lg mb-3 h-40 w-full object-cover"
             />
             <h4 className="font-medium text-gray-800">{course.title}</h4>
-            <p className="text-sm text-gray-500 mt-1">مدة الدورة: {course.duration}</p>
+            <p className="text-sm text-gray-500 mt-1">
+              مدة الدورة: {course.duration}
+            </p>
           </div>
         ))}
       </div>

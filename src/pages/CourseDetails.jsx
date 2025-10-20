@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import CourseIntro from "../components/CourseDetails/CourseIntro";
-import VideoPlayer from "../components/CourseDetails/VideoPlayer";
-import VideoList from "../components/CourseDetails/VideoList";
-import CourseInfoSidebar from "../components/CourseDetails/CourseInfoSidebar";
+import CourseIntro from "../components/CourseContent/CourseIntro";
+import VideoPlayer from "../components/CourseContent/VideoPlayer";
+import VideoList from "../components/CourseContent/VideoList";
+import CourseInfoSidebar from "../components/CourseContent/CourseInfoSidebar";
 
 export default function CourseDetails() {
   const { id } = useParams();

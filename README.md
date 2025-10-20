@@ -40,7 +40,7 @@ Rafeeq/
 │   │   │   ├── UniversitySection.jsx
 │   │   │   ├── EmptyState.jsx
 │   │   │   └── Pagination.jsx
-│   │   ├── CourseDetails/
+│   │   ├── CourseContent/
 │   │   │   ├── CourseInfoSidebar.jsx
 │   │   │   ├── VideoPlayer.jsx
 │   │   │   ├── VideoList.jsx

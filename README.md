@@ -85,7 +85,7 @@ Rafeeq/
 │   │   ├── About.jsx
 │   │   ├── Contact.jsx
 │   │   ├── Projects.jsx
-│   │   ├── CourseDetails.jsx
+│   │   ├── CourseContent.jsx
 │   │   ├── Courses.jsx
 │   │   ├── Admin/
 │   │   │   ├── Dashboard.jsx

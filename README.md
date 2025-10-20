@@ -68,15 +68,15 @@ Rafeeq/
 │   │   └── useFetch.js         # Hook for fetching data
 │   ├── layouts/                # Layout components
 │   │   ├── Navbar/             # Navigation bar components
-│   │   ├── Navbar.jsx
-│   │   ├── DesktopNavbar.jsx
-│   │   ├── MobileMenu.jsx
-│   │   ├── NavbarLinksSwitcher.jsx
-│   │   ├── NavbarLinks/
-│   │   │   ├── GuestLinks.jsx
-│   │   │   ├── UserLinks.jsx
-│   │   │   ├── TeacherLinks.jsx
-│   │   │   └── AdminLinks.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── DesktopNavbar.jsx
+│   │   │   ├── MobileMenu.jsx
+│   │   │   ├── NavbarLinksSwitcher.jsx
+│   │   │   └── NavbarLinks/
+│   │   │       ├── GuestLinks.jsx
+│   │   │       ├── UserLinks.jsx
+│   │   │       ├── TeacherLinks.jsx
+│   │   │       └── AdminLinks.jsx
 │   │   ├── Fotter/             # Navigation bar components
 │   │   │   └── Fotter.js
 │   │   └── MainLayout.jsx      # Main layout with header and footer

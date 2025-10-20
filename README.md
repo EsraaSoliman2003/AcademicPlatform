@@ -25,6 +25,7 @@ Rafeeq/
 │   │   │   ├── CourseCard.jsx
 │   │   │   ├── CustomPagination.jsx
 │   │   │   ├── NavigationButtons.jsx
+│   │   │   └── PlatformStatus.jsx
 │   │   ├── AdminDashboard/
 │   │   │   ├── Sidebar.jsx
 │   │   │   ├── Header.jsx
@@ -35,6 +36,7 @@ Rafeeq/
 │   │   ├── Courses/
 │   │   │   ├── CoursesCard.jsx
 │   │   │   ├── CoursesList.jsx
+│   │   │   ├── CoursesModal.jsx
 │   │   │   ├── CoursesHeader.jsx
 │   │   │   ├── CoursesFilter.jsx
 │   │   │   ├── UniversitySection.jsx
@@ -44,8 +46,7 @@ Rafeeq/
 │   │   │   ├── CourseInfoSidebar.jsx
 │   │   │   ├── VideoPlayer.jsx
 │   │   │   ├── VideoList.jsx
-│   │   │   ├── CourseIntro.jsx
-│   │   │   └── CourseDetails
+│   │   │   └── CourseIntro.jsx
 │   │   ├── Profile/
 │   │   │   ├── ChangePasswordModal.jsx
 │   │   │   ├── EditProfileModal.jsx
@@ -66,6 +67,7 @@ Rafeeq/
 │   │       ├── Auth.css
 │   │       ├── login.jsx       # Login component
 │   │       ├── register.jsx    # Register component
+│   │       ├── ForgetPassword.jsx
 │   │       └── store.js        # Auth-related state management
 │   ├── hooks/                  # Custom React hooks
 │   │   └── useFetch.js         # Hook for fetching data
@@ -90,11 +92,12 @@ Rafeeq/
 │   │   ├── Projects.jsx
 │   │   ├── CourseContent.jsx
 │   │   ├── Courses.jsx
+│   │   ├── Payment.jsx
 │   │   ├── Admin/
 │   │   │   ├── Dashboard.jsx
 │   │   │   ├── ManageCourses.jsx
 │   │   │   ├── ManageUsers.jsx
-│   │   │   └── ManageUniversities.jsx
+│   │   │   ├── ManageUniversities.jsx
 │   │   │   └── Reports.jsx
 │   │   └── NotFound.jsx.jsx
 │   ├── router/                 # Routing logic

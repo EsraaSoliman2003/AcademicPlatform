@@ -8,7 +8,7 @@ export default function AdminLinks({ isMobile, onLinkClick }) {
     { key: "profile", label: "الملف الشخصي", path: "/profile" },
 
     { key: "admin", label: "الادمن", path: "/admin" },
-    { key: "adminCourses", label: "إدارة الكورسات", path: "/admin/courses" },
+    { key: "adminCourses", label: "إدارة الدورات", path: "/admin/courses" },
     { key: "adminUsers", label: "إدارة المستخدمين", path: "/admin/users" },
     {
       key: "adminUniversities",

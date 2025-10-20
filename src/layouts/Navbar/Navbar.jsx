@@ -8,7 +8,7 @@ import { Link, useLocation } from "react-router-dom";
 export default function Navbar() {
   const location = useLocation();
   const user = useAuthStore((state) => state.user);
-  const role = user?.role || "guest";
+  const role = user?.role || "guestt";
   const [isOpen, setIsOpen] = useState(false);
   const [isTransparent, setIsTransparent] = useState(true);
   const menuRef = useRef(null);

@@ -14,7 +14,7 @@ import ManageCourses from "../pages/Admin/ManageCourses";
 import ManageUsers from "../pages/Admin/ManageUsers";
 import ManageUniversities from "../pages/Admin/ManageUniversities";
 import Reports from "../pages/Admin/Reports";
-import CourseDetails from "../pages/CourseDetails";
+import CourseContent from "../pages/CourseContent";
 
 export default function AppRouter() {
   return (
@@ -30,7 +30,7 @@ export default function AppRouter() {
       {/* Protected Pages */}
       <Route path="/profile" element={<Profile />} />
       <Route path="/courses" element={<Courses />} />
-      <Route path="/courses/:id" element={<CourseDetails />} />
+      <Route path="/courses/:id" element={<CourseContent />} />
       <Route path="/admin" element={<Dashboard />} />
       <Route path="/admin/courses" element={<ManageCourses />} />
       <Route path="/admin/users" element={<ManageUsers />} />

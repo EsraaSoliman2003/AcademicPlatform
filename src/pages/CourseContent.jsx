@@ -5,7 +5,7 @@ import VideoPlayer from "../components/CourseContent/VideoPlayer";
 import VideoList from "../components/CourseContent/VideoList";
 import CourseInfoSidebar from "../components/CourseContent/CourseInfoSidebar";
 
-export default function CourseDetails() {
+export default function CourseContent() {
   const { id } = useParams();
 
   // Mock data (استبدليه لاحقًا بالبيانات من الـ API)

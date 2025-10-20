@@ -5,6 +5,7 @@ export default function AdminLinks({ isMobile, onLinkClick }) {
     { key: "about", label: "من نحن", path: "/about" },
     { key: "contact", label: "تواصل معنا", path: "/contact" },
     { key: "courses", label: "دوراتي", path: "/courses" },
+    { key: "profile", label: "الملف الشخصي", path: "/profile" },
 
     { key: "admin", label: "الادمن", path: "/admin" },
     { key: "adminCourses", label: "إدارة الكورسات", path: "/admin/courses" },

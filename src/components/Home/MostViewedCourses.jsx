@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import CourseCard from "./CourseCard";
+import CourseCard from "../common/CourseCard";
 import CustomPagination from "./CustomPagination";
 import CourseModal from "../Courses/CourseModal";
 import { useSnackbarStore } from "../../store/snackbarStore";

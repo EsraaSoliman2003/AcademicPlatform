@@ -17,12 +17,13 @@ Rafeeq/
 │   │   ├── imgs/                 # Static images for projects, profile, etc.
 │   │   └── animation/          # Animations from Lottie
 │   ├── components/             # Reusable UI components
+│   │   ├── common/
+│   │   │   └── CourseCard.jsx
 │   │   ├── Home/             # Navigation bar components
 │   │   │   ├── HomeMain.jsx
 │   │   │   ├── CategoriesSection.jsx
 │   │   │   ├── CategoryCard.jsx
 │   │   │   ├── MostViewedCourses.jsx
-│   │   │   ├── CourseCard.jsx
 │   │   │   ├── CustomPagination.jsx
 │   │   │   ├── NavigationButtons.jsx
 │   │   │   └── PlatformStatus.jsx
@@ -34,7 +35,6 @@ Rafeeq/
 │   │   │   ├── UsersTable.jsx
 │   │   │   └── UniversityManager.jsx
 │   │   ├── Courses/
-│   │   │   ├── CoursesCard.jsx
 │   │   │   ├── CoursesList.jsx
 │   │   │   ├── CoursesModal.jsx
 │   │   │   ├── CoursesHeader.jsx
@@ -52,6 +52,8 @@ Rafeeq/
 │   │   │   ├── EditProfileModal.jsx
 │   │   │   ├── ProfileHeader.jsx
 │   │   │   ├── PersonalInfo.jsx
+│   │   │   ├── ExamsScheduleModal.jsx
+│   │   │   ├── UploadedCoursesSection.jsx
 │   │   │   ├── CoursesSection.jsx
 │   │   │   ├── ProgressStats.jsx
 │   │   │   └── SettingsSection.jsx
@@ -92,6 +94,7 @@ Rafeeq/
 │   │   ├── Projects.jsx
 │   │   ├── CourseContent.jsx
 │   │   ├── Courses.jsx
+│   │   ├── AddCourse.jsx
 │   │   ├── Payment.jsx
 │   │   ├── Admin/
 │   │   │   ├── Dashboard.jsx

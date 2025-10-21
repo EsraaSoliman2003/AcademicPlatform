@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CourseCard from "./CourseCard";
+import CourseCard from "../common/CourseCard";
 import CourseModal from "./CourseModal";
 import { useSnackbarStore } from "../../store/snackbarStore";
 

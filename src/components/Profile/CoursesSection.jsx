@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ExamsScheduleModal from "./ExamsScheduleModal";
+import CourseCard from "../common/CourseCard";
 
 export default function CoursesSection() {
   const navigate = useNavigate();
@@ -136,26 +137,12 @@ export default function CoursesSection() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {courses.map((course) => (
-          <div
-            onClick={() => navigate(`/courses/${course.id}`)}
+          <CourseCard
             key={course.id}
-            className="p-4 border border-gray-200 rounded-xl hover:shadow-lg transition cursor-pointer"
-          >
-            <img
-              src={course.image}
-              alt={course.title}
-              className="rounded-lg mb-3 h-40 w-full object-cover"
-            />
-            <h4 className="font-medium text-gray-800">{course.title}</h4>
-            <p className="text-sm text-gray-500 mt-1">
-              مدة الدورة: {course.duration}
-            </p>
-            {course.hasExam && (
-              <p className="text-sm text-blue-600 mt-1 font-medium">
-                يحتوي على امتحان
-              </p>
-            )}
-          </div>
+            course={course}
+            onClick={() => navigate(`/courses/${course.id}`)}
+            mode={"profile"}
+          />
         ))}
       </div>
 

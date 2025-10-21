@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import ProfileHeader from "../components/Profile/ProfileHeader";
 import PersonalInfo from "../components/Profile/PersonalInfo";
-import CoursesSection from "../components/Profile/CoursesSection";
+import EnrolledCoursesSection from "../components/Profile/EnrolledCoursesSection";
 import UploadedCoursesSection from "../components/Profile/UploadedCoursesSection"; // إضافة المكون الجديد
 import ProgressStats from "../components/Profile/ProgressStats";
 import SettingsSection from "../components/Profile/SettingsSection";
@@ -34,7 +34,7 @@ export default function Profile() {
         onEditProfile={() => setIsEditModalOpen(true)}
       />
       <PersonalInfo userData={userData} />
-      <CoursesSection />
+      <EnrolledCoursesSection />
       <UploadedCoursesSection />
       <ProgressStats />
       <SettingsSection onChangePassword={() => setIsPasswordModalOpen(true)} />

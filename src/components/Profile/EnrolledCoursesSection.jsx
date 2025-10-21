@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import ExamsScheduleModal from "./ExamsScheduleModal";
 import CourseCard from "../common/CourseCard";
 
-export default function CoursesSection() {
+export default function EnrolledCoursesSection() {
   const navigate = useNavigate();
   const [isExamsModalOpen, setIsExamsModalOpen] = useState(false);
 

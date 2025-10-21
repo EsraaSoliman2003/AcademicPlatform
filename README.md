@@ -54,7 +54,7 @@ Rafeeq/
 │   │   │   ├── PersonalInfo.jsx
 │   │   │   ├── ExamsScheduleModal.jsx
 │   │   │   ├── UploadedCoursesSection.jsx
-│   │   │   ├── CoursesSection.jsx
+│   │   │   ├── EnrolledCoursesSection.jsx
 │   │   │   ├── ProgressStats.jsx
 │   │   │   └── SettingsSection.jsx
 │   │   ├── Snackbar/

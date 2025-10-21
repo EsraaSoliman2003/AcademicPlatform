@@ -16,6 +16,7 @@ import ManageUniversities from "../pages/Admin/ManageUniversities";
 import Reports from "../pages/Admin/Reports";
 import CourseContent from "../pages/CourseContent";
 import Payment from "../pages/Payment";
+import AddCourse from "../pages/AddCourse";
 
 export default function AppRouter() {
   return (
@@ -32,6 +33,7 @@ export default function AppRouter() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/courses" element={<Courses />} />
       <Route path="/courses/:id" element={<CourseContent />} />
+      <Route path="/add-course" element={<AddCourse />} />
       <Route path="/payment" element={<Payment />} />
       <Route path="/admin" element={<Dashboard />} />
       <Route path="/admin/courses" element={<ManageCourses />} />

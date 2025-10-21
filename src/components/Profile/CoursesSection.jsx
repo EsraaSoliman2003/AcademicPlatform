@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ExamsScheduleModal from "./ExamsScheduleModal";
 
 export default function CoursesSection() {
   const navigate = useNavigate();
+  const [isExamsModalOpen, setIsExamsModalOpen] = useState(false);
 
   const courses = [
     {
@@ -19,6 +21,11 @@ export default function CoursesSection() {
       level: "متقدم",
       description:
         "تعلم بناء تطبيقات ويب تفاعلية باستخدام أحدث إصدارات React مع مشاريع عملية حقيقية.",
+      hasExam: true,
+      examSchedule: [
+        { date: "2025-11-01", time: "10:00 صباحًا" },
+        { date: "2025-11-15", time: "02:00 مساءً" },
+      ],
     },
     {
       id: 2,
@@ -34,6 +41,8 @@ export default function CoursesSection() {
       level: "متوسط",
       description:
         "أنشئ تطبيقات خادم قوية باستخدام Node.js و Express مع قواعد البيانات والتوثيق.",
+      hasExam: false,
+      examSchedule: [],
     },
     {
       id: 3,
@@ -49,6 +58,8 @@ export default function CoursesSection() {
       level: "مبتدئ",
       description:
         "إتقان إطار عمل Tailwind CSS لإنشاء واجهات مستخدم جميلة وسريعة الاستجابة.",
+      hasExam: true,
+      examSchedule: [{ date: "2025-12-01", time: "11:00 صباحًا" }],
     },
     {
       id: 4,
@@ -64,6 +75,8 @@ export default function CoursesSection() {
       level: "متقدم",
       description:
         "تعمق في JavaScript مع ES6+ و patterns متقدمة وبناء تطبيقات معقدة.",
+      hasExam: false,
+      examSchedule: [],
     },
     {
       id: 5,
@@ -79,6 +92,11 @@ export default function CoursesSection() {
       level: "متقدم",
       description:
         "تعلم تحليل البيانات والذكاء الاصطناعي باستخدام Python ومكتباتها المتقدمة.",
+      hasExam: true,
+      examSchedule: [
+        { date: "2025-11-10", time: "03:00 مساءً" },
+        { date: "2025-11-20", time: "09:00 صباحًا" },
+      ],
     },
     {
       id: 6,
@@ -93,13 +111,29 @@ export default function CoursesSection() {
       original: "279 ريال",
       level: "متوسط",
       description: "أنشئ تطبيقات جوال سريعة وجذابة باستخدام Flutter و Dart.",
+      hasExam: false,
+      examSchedule: [],
     },
   ];
+
+  const coursesWithExams = courses.filter((course) => course.hasExam);
+  const hasExams = coursesWithExams.length > 0;
+
   return (
     <section className="bg-white rounded-2xl shadow-md p-6 mb-8">
-      <h3 className="text-xl font-semibold text-red-600 mb-4 border-b border-gray-200 pb-2">
-        الدورات المسجّلة
-      </h3>
+      <div className="flex justify-between items-center mb-4">
+        <h3 className="text-xl font-semibold text-red-600 border-b border-gray-200 pb-2">
+          الدورات المسجّلة
+        </h3>
+        {hasExams && (
+          <button
+            onClick={() => setIsExamsModalOpen(true)}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium transition-colors duration-200 shadow-sm"
+          >
+            عرض مواعيد الامتحانات
+          </button>
+        )}
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {courses.map((course) => (
           <div
@@ -116,9 +150,20 @@ export default function CoursesSection() {
             <p className="text-sm text-gray-500 mt-1">
               مدة الدورة: {course.duration}
             </p>
+            {course.hasExam && (
+              <p className="text-sm text-blue-600 mt-1 font-medium">
+                يحتوي على امتحان
+              </p>
+            )}
           </div>
         ))}
       </div>
+
+      <ExamsScheduleModal
+        isOpen={isExamsModalOpen}
+        onClose={() => setIsExamsModalOpen(false)}
+        coursesWithExams={coursesWithExams}
+      />
     </section>
   );
 }

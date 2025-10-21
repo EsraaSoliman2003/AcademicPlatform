@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import ProfileHeader from "../components/Profile/ProfileHeader";
 import PersonalInfo from "../components/Profile/PersonalInfo";
 import CoursesSection from "../components/Profile/CoursesSection";
+import UploadedCoursesSection from "../components/Profile/UploadedCoursesSection"; // إضافة المكون الجديد
 import ProgressStats from "../components/Profile/ProgressStats";
 import SettingsSection from "../components/Profile/SettingsSection";
 import EditProfileModal from "../components/Profile/EditProfileModal";
@@ -26,17 +27,18 @@ export default function Profile() {
 
   return (
     <div
-    dir="rtl"
-    className="min-h-screen bg-lightBg dark:bg-darkBg text-lightText dark:text-darkText py-10 px-6 md:px-20 transition-colors duration-300">
-      <ProfileHeader 
+      dir="rtl"
+      className="min-h-screen bg-lightBg dark:bg-darkBg text-lightText dark:text-darkText py-10 px-6 md:px-20 transition-colors duration-300">
+      <ProfileHeader
         userData={userData}
         onEditProfile={() => setIsEditModalOpen(true)}
       />
       <PersonalInfo userData={userData} />
       <CoursesSection />
+      <UploadedCoursesSection />
       <ProgressStats />
       <SettingsSection onChangePassword={() => setIsPasswordModalOpen(true)} />
-      
+
       {/* نماذج التعديل */}
       <EditProfileModal
         isOpen={isEditModalOpen}
@@ -44,7 +46,7 @@ export default function Profile() {
         userData={userData}
         onUpdate={handleUpdateUserData}
       />
-      
+
       <ChangePasswordModal
         isOpen={isPasswordModalOpen}
         onClose={() => setIsPasswordModalOpen(false)}

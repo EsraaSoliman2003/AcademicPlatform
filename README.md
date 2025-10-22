@@ -36,7 +36,6 @@ Rafeeq/
 │   │   │   └── UniversityManager.jsx
 │   │   ├── Courses/
 │   │   │   ├── CoursesList.jsx
-│   │   │   ├── CoursesModal.jsx
 │   │   │   ├── CoursesHeader.jsx
 │   │   │   ├── CoursesFilter.jsx
 │   │   │   ├── UniversitySection.jsx
@@ -44,9 +43,11 @@ Rafeeq/
 │   │   │   └── Pagination.jsx
 │   │   ├── CourseContent/
 │   │   │   ├── CourseInfoSidebar.jsx
-│   │   │   ├── VideoPlayer.jsx
+│   │   │   ├── CourseIntro.jsx
+│   │   │   ├── CourseOwnerActions.jsx
+│   │   │   ├── EditCourseModal.jsx
 │   │   │   ├── VideoList.jsx
-│   │   │   └── CourseIntro.jsx
+│   │   │   └── VideoPlayer.jsx
 │   │   ├── Profile/
 │   │   │   ├── ChangePasswordModal.jsx
 │   │   │   ├── EditProfileModal.jsx

@@ -3,9 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import CourseCard from "../common/CourseCard";
 import CustomPagination from "./CustomPagination";
-import CourseModal from "../Courses/CourseModal";
 import coursesData from "../../data/data.json";
-import { useSnackbarStore } from "../../store/snackbarStore";
 import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -14,32 +12,12 @@ import "swiper/css/pagination";
 export default function MostViewedCourses() {
   const swiperRef = useRef();
   const [activeIndex, setActiveIndex] = useState(0);
-  const [selectedCourse, setSelectedCourse] = useState(null);
-  const { showSnackbar } = useSnackbarStore();
   const navigate = useNavigate();
 
   const colors = {
     text: "#1e293b",
     primary: "#10b981",
     gray: "#64748b",
-  };
-
-  const handleCourseClick = (course) => {
-    setSelectedCourse(course);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedCourse(null);
-  };
-
-  const handleEnroll = (course) => {
-    if (course.price !== "مجاني" && !course.price.toString().includes("0")) {
-      navigate(`/payment`);
-      handleCloseModal();
-    } else {
-      showSnackbar("تم إضافة الكورس إلى ملفك الشخصي بنجاح", "success");
-      handleCloseModal();
-    }
   };
 
   const handleBulletClick = (index) => {
@@ -54,7 +32,8 @@ export default function MostViewedCourses() {
             className="text-4xl md:text-5xl font-bold mb-4"
             style={{ color: colors.text }}
           >
-            أكثر الكورسات <span style={{ color: colors.primary }}>مشاهدة</span>
+            أكثر الكورسات{" "}
+            <span style={{ color: colors.primary }}>مشاهدة</span>
           </h2>
           <p
             className="text-lg md:text-xl max-w-2xl mx-auto"
@@ -84,7 +63,7 @@ export default function MostViewedCourses() {
               <CourseCard
                 course={course}
                 colors={colors}
-                onClick={() => handleCourseClick(course)}
+                onClick={() => navigate(`/courses/info/${course.id}`)}
               />
             </SwiperSlide>
           ))}
@@ -97,15 +76,6 @@ export default function MostViewedCourses() {
           onBulletClick={handleBulletClick}
         />
       </div>
-
-      {/* مودال الكورس */}
-      {selectedCourse && (
-        <CourseModal
-          course={selectedCourse}
-          onClose={handleCloseModal}
-          onEnroll={handleEnroll}
-        />
-      )}
     </section>
   );
 }

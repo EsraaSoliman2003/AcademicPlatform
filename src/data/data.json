@@ -17,9 +17,15 @@
       "videos": [
         { "id": 1, "title": "البدء مع HTML", "url": "/videos/lesson1.mp4" },
         { "id": 2, "title": "أساسيات CSS", "url": "/videos/lesson2.mp4" },
-        { "id": 3, "title": "مقدمة في JavaScript", "url": "/videos/lesson3.mp4" },
+        {
+          "id": 3,
+          "title": "مقدمة في JavaScript",
+          "url": "/videos/lesson3.mp4"
+        },
         { "id": 4, "title": "مقدمة في React", "url": "/videos/lesson4.mp4" }
-      ]
+      ],
+      "hasExam": true,
+      "examSchedule": [{ "date": "2025-11-10", "time": "03:00 مساءً" }]
     },
     {
       "id": 2,
@@ -36,8 +42,16 @@
       "level": "متوسط",
       "price": 49.99,
       "videos": [
-        { "id": 1, "title": "نظرة عامة على React Hooks", "url": "/videos/lesson1.mp4" },
-        { "id": 2, "title": "استخدام Context API", "url": "/videos/lesson2.mp4" },
+        {
+          "id": 1,
+          "title": "نظرة عامة على React Hooks",
+          "url": "/videos/lesson1.mp4"
+        },
+        {
+          "id": 2,
+          "title": "استخدام Context API",
+          "url": "/videos/lesson2.mp4"
+        },
         { "id": 3, "title": "تحسين الأداء", "url": "/videos/lesson3.mp4" },
         { "id": 4, "title": "بناء Hooks مخصصة", "url": "/videos/lesson4.mp4" }
       ]
@@ -58,7 +72,11 @@
       "price": 49.99,
       "videos": [
         { "id": 1, "title": "إعداد Node.js", "url": "/videos/lesson1.mp4" },
-        { "id": 2, "title": "التعامل مع Express", "url": "/videos/lesson2.mp4" },
+        {
+          "id": 2,
+          "title": "التعامل مع Express",
+          "url": "/videos/lesson2.mp4"
+        },
         { "id": 3, "title": "أساسيات MongoDB", "url": "/videos/lesson3.mp4" },
         { "id": 4, "title": "مشروع REST API", "url": "/videos/lesson4.mp4" }
       ]
@@ -100,7 +118,11 @@
       "price": 49.99,
       "videos": [
         { "id": 1, "title": "مقدمة في Python", "url": "/videos/lesson1.mp4" },
-        { "id": 2, "title": "المتغيرات وأنواع البيانات", "url": "/videos/lesson2.mp4" },
+        {
+          "id": 2,
+          "title": "المتغيرات وأنواع البيانات",
+          "url": "/videos/lesson2.mp4"
+        },
         { "id": 3, "title": "الدوال في Python", "url": "/videos/lesson3.mp4" },
         { "id": 4, "title": "التعامل مع الملفات", "url": "/videos/lesson4.mp4" }
       ]
@@ -120,7 +142,11 @@
       "level": "متوسط",
       "price": 49.99,
       "videos": [
-        { "id": 1, "title": "أساسيات DataFrames", "url": "/videos/lesson1.mp4" },
+        {
+          "id": 1,
+          "title": "أساسيات DataFrames",
+          "url": "/videos/lesson1.mp4"
+        },
         { "id": 2, "title": "تنظيف البيانات", "url": "/videos/lesson2.mp4" },
         { "id": 3, "title": "التحليل والعرض", "url": "/videos/lesson3.mp4" },
         { "id": 4, "title": "مشروع مصغر", "url": "/videos/lesson4.mp4" }
@@ -141,9 +167,21 @@
       "level": "متقدم",
       "price": 49.99,
       "videos": [
-        { "id": 1, "title": "مقدمة في تعلم الآلة", "url": "/videos/lesson1.mp4" },
-        { "id": 2, "title": "التعلم الخاضع للإشراف", "url": "/videos/lesson2.mp4" },
-        { "id": 3, "title": "التعلم غير الخاضع للإشراف", "url": "/videos/lesson3.mp4" },
+        {
+          "id": 1,
+          "title": "مقدمة في تعلم الآلة",
+          "url": "/videos/lesson1.mp4"
+        },
+        {
+          "id": 2,
+          "title": "التعلم الخاضع للإشراف",
+          "url": "/videos/lesson2.mp4"
+        },
+        {
+          "id": 3,
+          "title": "التعلم غير الخاضع للإشراف",
+          "url": "/videos/lesson3.mp4"
+        },
         { "id": 4, "title": "بناء النماذج", "url": "/videos/lesson4.mp4" }
       ]
     }

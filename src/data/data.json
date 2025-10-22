@@ -3,6 +3,7 @@
     {
       "id": 1,
       "title": "مقدمة في تطوير الويب",
+      "university": "جامعة القاهرة",
       "description": "تعلم أساسيات HTML وCSS وJavaScript لبدء رحلتك كمطور ويب.",
       "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
       "instructor": "جون دو",
@@ -30,6 +31,7 @@
     {
       "id": 2,
       "title": "تطوير React المتقدم",
+      "university": "جامعة اسكندرية",
       "description": "تعرف على مفاهيم الـ Hooks والـ Context وتقنيات تحسين الأداء في React.",
       "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
       "instructor": "جين سميث",
@@ -59,6 +61,7 @@
     {
       "id": 3,
       "title": "تطوير الواجهة الخلفية بـ Node.js وMongoDB",
+      "university": "جامعة اسكندرية",
       "description": "تعلم تطوير الواجهة الخلفية باستخدام Node.js وExpress ودمجها مع MongoDB.",
       "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
       "instructor": "مايكل لي",
@@ -84,6 +87,7 @@
     {
       "id": 4,
       "title": "أساسيات تصميم UI/UX",
+      "university": "جامعة عين شمس",
       "description": "أتقن مبادئ التصميم الجيد، نظرية الألوان، وأبحاث تجربة المستخدم.",
       "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
       "instructor": "إميلي براون",
@@ -105,6 +109,7 @@
     {
       "id": 5,
       "title": "بايثون للمبتدئين",
+      "university": "جامعة عين شمس",
       "description": "ابدأ البرمجة بلغة Python، السهلة والقوية لتعلم الأساسيات خطوة بخطوة.",
       "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
       "instructor": "روبرت غرين",
@@ -130,6 +135,7 @@
     {
       "id": 6,
       "title": "تحليل البيانات باستخدام Pandas",
+      "university": "جامعة المنوفية",
       "description": "تعلم تحليل البيانات وعرضها بكفاءة باستخدام مكتبة Pandas في Python.",
       "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
       "instructor": "صوفيا كارتر",
@@ -155,6 +161,7 @@
     {
       "id": 7,
       "title": "مقدمة في تعلم الآلة",
+      "university": "جامعة المنوفية",
       "description": "افهم أساسيات الذكاء الاصطناعي وتعلم كيفية بناء نموذج تعلم آلي بسيط.",
       "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
       "instructor": "دانيال وايت",
@@ -184,6 +191,38 @@
         },
         { "id": 4, "title": "بناء النماذج", "url": "/videos/lesson4.mp4" }
       ]
+    },
+    {
+      "id": 8,
+      "title": "احتراف JavaScript من الصفر",
+      "university": "جامعة القاهرة",
+      "description": "تعلم لغة JavaScript من البداية إلى الاحتراف مع تطبيقات عملية وأمثلة توضح المفاهيم الأساسية والمتقدمة.",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+      "instructor": "إسراء سليمان",
+      "instructorId": 8,
+      "duration": "10 ساعات",
+      "rating": 4.9,
+      "views": 2200,
+      "students": 540,
+      "original": 99.99,
+      "level": "مبتدئ إلى متقدم",
+      "price": 0,
+      "videos": [
+        {
+          "id": 1,
+          "title": "مقدمة في JavaScript",
+          "url": "/videos/lesson1.mp4"
+        },
+        {
+          "id": 2,
+          "title": "المتغيرات وأنواع البيانات",
+          "url": "/videos/lesson2.mp4"
+        },
+        { "id": 3, "title": "الدوال والكائنات", "url": "/videos/lesson3.mp4" },
+        { "id": 4, "title": "DOM وEvents", "url": "/videos/lesson4.mp4" }
+      ],
+      "hasExam": true,
+      "examSchedule": [{ "date": "2025-12-05", "time": "05:00 مساءً" }]
     }
   ]
 }

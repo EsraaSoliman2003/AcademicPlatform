@@ -18,33 +18,38 @@ import CourseContent from "../pages/CourseContent";
 import Payment from "../pages/Payment";
 import AddCourse from "../pages/AddCourse";
 import CourseInfo from "../pages/CourseInfo";
+import ScrollToTop from "./ScrollToTop";
+
 
 export default function AppRouter() {
   return (
-    <Routes>
-      {/* Global Pages */}
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/forget-password" element={<ForgetPassword />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<ContactUs />} />
+    <>
+      <ScrollToTop /> {/* 👈 بيرجّع الصفحة لأعلى عند التنقل */}
+      <Routes>
+        {/* Global Pages */}
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forget-password" element={<ForgetPassword />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<ContactUs />} />
 
-      {/* Protected Pages */}
-      <Route path="/profile" element={<Profile />} />
-      <Route path="/courses" element={<Courses />} />
-      <Route path="/courses/:id" element={<CourseContent />} />
-      <Route path="/courses/info/:id" element={<CourseInfo />} />
-      <Route path="/add-course" element={<AddCourse />} />
-      <Route path="/payment" element={<Payment />} />
-      <Route path="/admin" element={<Dashboard />} />
-      <Route path="/admin/courses" element={<ManageCourses />} />
-      <Route path="/admin/users" element={<ManageUsers />} />
-      <Route path="/admin/universities" element={<ManageUniversities />} />
-      <Route path="/admin/reports" element={<Reports />} />
+        {/* Protected Pages */}
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/courses/:id" element={<CourseContent />} />
+        <Route path="/courses/info/:id" element={<CourseInfo />} />
+        <Route path="/add-course" element={<AddCourse />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/admin" element={<Dashboard />} />
+        <Route path="/admin/courses" element={<ManageCourses />} />
+        <Route path="/admin/users" element={<ManageUsers />} />
+        <Route path="/admin/universities" element={<ManageUniversities />} />
+        <Route path="/admin/reports" element={<Reports />} />
 
-      {/* Error Page */}
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        {/* Error Page */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }

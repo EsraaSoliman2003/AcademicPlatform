@@ -105,6 +105,7 @@ Rafeeq/
 │   │   │   └── Reports.jsx
 │   │   └── NotFound.jsx.jsx
 │   ├── router/                 # Routing logic
+│   │   ├── ScrollToTop.jsx
 │   │   ├── approuter.jsx       # Centralized route definitions
 │   │   └── privateroute.jsx    # Protected routes for authenticated users
 │   ├── store/                  # State management

@@ -4,6 +4,7 @@ import CoursesFilter from "../components/Courses/CoursesFilter";
 import UniversitySection from "../components/Courses/UniversitySection";
 import EmptyState from "../components/Courses/EmptyState";
 import Pagination from "../components/Courses/Pagination";
+import coursesData from "../data/data.json";
 
 export default function Courses() {
   const [filters, setFilters] = useState({
@@ -18,112 +19,24 @@ export default function Courses() {
   const [currentPage, setCurrentPage] = useState(1);
   const coursesPerPage = 6;
 
-  // ✅ لفينا البيانات داخل useMemo عشان تثبت بين الريندرات
-  const universitiesData = useMemo(
-    () => [
-      {
-        id: 1,
-        name: "جامعة القاهرة",
-        logo: "https://images.unsplash.com/photo-1562813733-b31f71025d54?auto=format&fit=crop&w=100&q=80",
-        courses: [
-          {
-            id: 1,
-            title: "React المتقدم - من الصفر إلى الاحتراف",
-            image:
-              "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=500&q=80",
-            category: "برمجة",
-            level: "متقدم",
-            price: 0,
-            originalPrice: 299,
-            rating: 4.9,
-            students: 856,
-            duration: "32 ساعة",
-            instructor: "د. أحمد محمد",
-            description:
-              "تعلم بناء تطبيقات ويب تفاعلية باستخدام أحدث إصدارات React",
-          },
-          {
-            id: 2,
-            title: "Node.js و Express - تطوير الويب الخلفي",
-            image:
-              "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&w=500&q=80",
-            category: "برمجة",
-            level: "متوسط",
-            price: 129,
-            originalPrice: 259,
-            rating: 4.8,
-            students: 723,
-            duration: "28 ساعة",
-            instructor: "د. محمد علي",
-            description: "أنشئ تطبيقات خادم قوية باستخدام Node.js و Express",
-          },
-        ],
-      },
-      {
-        id: 2,
-        name: "جامعة عين شمس",
-        logo: "https://images.unsplash.com/photo-1541336032412-2048a678540d?auto=format&fit=crop&w=100&q=80",
-        courses: [
-          {
-            id: 3,
-            title: "Python - تحليل البيانات والتعلم الآلي",
-            image:
-              "https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?auto=format&fit=crop&w=500&q=80",
-            category: "علم البيانات",
-            level: "متقدم",
-            price: 179,
-            originalPrice: 359,
-            rating: 4.8,
-            students: 789,
-            duration: "40 ساعة",
-            instructor: "د. سارة أحمد",
-            description:
-              "تعلم تحليل البيانات والذكاء الاصطناعي باستخدام Python",
-          },
-          {
-            id: 4,
-            title: "إدارة المشاريع الاحترافية",
-            image:
-              "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=500&q=80",
-            category: "إدارة",
-            level: "متوسط",
-            price: 99,
-            originalPrice: 199,
-            rating: 4.7,
-            students: 456,
-            duration: "24 ساعة",
-            instructor: "د. خالد إبراهيم",
-            description: "إتقان مهارات إدارة المشاريع باستخدام منهجيات Agile",
-          },
-        ],
-      },
-      {
-        id: 3,
-        name: "جامعة الإسكندرية",
-        logo: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=500&q=80",
-        courses: [
-          {
-            id: 5,
-            title: "التصميم الجرافيكي باستخدام Adobe",
-            image:
-              "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=500&q=80",
-            category: "تصميم",
-            level: "مبتدئ",
-            price: 89,
-            originalPrice: 179,
-            rating: 4.6,
-            students: 345,
-            duration: "20 ساعة",
-            instructor: "د. منى سعيد",
-            description: "تعلم أساسيات التصميم الجرافيكي باستخدام أدوبي",
-          },
-        ],
-      },
-    ],
-    []
-  );
+  const universitiesData = useMemo(() => {
+    const grouped = {};
 
-  // 🧠 دالة التصفية
+    coursesData.courses.forEach((course) => {
+      if (!grouped[course.university]) {
+        grouped[course.university] = {
+          id: Object.keys(grouped).length + 1,
+          name: course.university,
+          logo: "https://images.unsplash.com/photo-1562813733-b31f71025d54?auto=format&fit=crop&w=100&q=80",
+          courses: [],
+        };
+      }
+      grouped[course.university].courses.push(course);
+    });
+
+    return Object.values(grouped);
+  }, []);
+
   const filteredUniversities = useMemo(() => {
     return universitiesData
       .map((university) => ({
@@ -131,9 +44,7 @@ export default function Courses() {
         courses: university.courses.filter((course) => {
           const matchesUniversity =
             filters.university === "all" ||
-            university.id.toString() === filters.university;
-          const matchesCategory =
-            filters.category === "all" || course.category === filters.category;
+            university.name === filters.university;
           const matchesLevel =
             filters.level === "all" || course.level === filters.level;
           const matchesPrice =
@@ -151,7 +62,6 @@ export default function Courses() {
 
           return (
             matchesUniversity &&
-            matchesCategory &&
             matchesLevel &&
             matchesPrice &&
             matchesRating &&
@@ -162,7 +72,6 @@ export default function Courses() {
       .filter((university) => university.courses.length > 0);
   }, [filters, universitiesData]);
 
-  // 🧮 حساب الكورسات للترقيم
   const allFilteredCourses = filteredUniversities.flatMap((u) => u.courses);
   const totalPages = Math.ceil(allFilteredCourses.length / coursesPerPage);
   const currentCourses = allFilteredCourses.slice(
@@ -170,7 +79,6 @@ export default function Courses() {
     currentPage * coursesPerPage
   );
 
-  // 🧭 دوال التحكم
   const handleFilterChange = (filterType, value) => {
     setFilters((prev) => ({ ...prev, [filterType]: value }));
     setCurrentPage(1);
@@ -193,7 +101,6 @@ export default function Courses() {
         />
 
         <div className="flex flex-col lg:flex-row gap-8 mt-8">
-          {/* 🧩 القائمة الجانبية للفلاتر */}
           <div className="lg:w-1/4">
             <CoursesFilter
               filters={filters}
@@ -202,7 +109,6 @@ export default function Courses() {
             />
           </div>
 
-          {/* 📚 المحتوى الرئيسي */}
           <div className="lg:w-3/4">
             {filteredUniversities.length > 0 ? (
               <>

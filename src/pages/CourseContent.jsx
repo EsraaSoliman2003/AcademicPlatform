@@ -1,52 +1,91 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CourseIntro from "../components/CourseContent/CourseIntro";
 import VideoPlayer from "../components/CourseContent/VideoPlayer";
 import VideoList from "../components/CourseContent/VideoList";
 import CourseInfoSidebar from "../components/CourseContent/CourseInfoSidebar";
+import CourseOwnerActions from "../components/CourseContent/CourseOwnerActions";
+import EditCourseModal from "../components/CourseContent/EditCourseModal";
+import coursesData from "../data/data.json";
 
 export default function CourseContent() {
   const { id } = useParams();
+  const [course, setCourse] = useState(null);
+  const [currentVideo, setCurrentVideo] = useState(null);
+  const [isEditOpen, setIsEditOpen] = useState(false);
 
-  // Mock data (استبدليه لاحقًا بالبيانات من الـ API)
-  const course = {
-    id,
-    title: "Introduction to Web Development",
-    description:
-      "Learn the basics of HTML, CSS, and JavaScript to start your journey as a web developer.",
-    image:
-      "https://images.unsplash.com/photo-1581091012184-5c7b3f6b2a2a?auto=format&fit=crop&w=800&q=80",
-    instructor: "John Doe",
-    duration: "6 hours",
-    rating: 4.8,
-    videos: [
-      { id: 1, title: "Getting Started with HTML", url: "https://www.w3schools.com/html/mov_bbb.mp4" },
-      { id: 2, title: "CSS Fundamentals", url: "https://www.w3schools.com/html/mov_bbb.mp4" },
-      { id: 3, title: "Intro to JavaScript", url: "https://www.w3schools.com/html/mov_bbb.mp4" },
-    ],
+  const currentUser = { id: 7 };
+
+  useEffect(() => {
+    const foundCourse = coursesData.courses.find((c) => c.id === parseInt(id));
+    if (foundCourse) {
+      setCourse(foundCourse);
+      setCurrentVideo(foundCourse.videos[0]);
+    }
+  }, [id]);
+
+  if (!course) {
+    return (
+      <div className="flex justify-center items-center h-screen text-gray-500">
+        Loading course...
+      </div>
+    );
+  }
+
+  const isOwner = currentUser.id === course.instructorId;
+
+  const handleEditClick = () => setIsEditOpen(true);
+  const handleSaveCourse = (updatedData) => {
+    setCourse((prev) => ({ ...prev, ...updatedData }));
+  };
+  const handleDelete = () => {
+    if (window.confirm("Are you sure you want to delete this course?")) {
+      alert("Course deleted!");
+    }
+  };
+  const handleVideoSelect = (video) => {
+    setCurrentVideo(video);
   };
 
   return (
     <div className="flex flex-col lg:flex-row gap-6 p-6 mt-20">
-      {/* المحتوى الرئيسي */}
       <div className="flex-1">
         <CourseIntro
           image={course.image}
           title={course.title}
           description={course.description}
         />
+
         <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2">
-            <VideoPlayer videoUrl={course.videos[0].url} />
-            <VideoList videos={course.videos} />
+            <VideoPlayer videoUrl={currentVideo?.url} />
+
+            <VideoList videos={course.videos} onSelect={handleVideoSelect} />
           </div>
-          <CourseInfoSidebar
-            instructor={course.instructor}
-            duration={course.duration}
-            rating={course.rating}
-          />
+
+          {isOwner ? (
+            <CourseOwnerActions
+              onAddLesson={() => alert("Add Lesson clicked")}
+              onEdit={handleEditClick}
+              onDelete={handleDelete}
+              onCreateExam={() => alert("Create Exam clicked")}
+            />
+          ) : (
+            <CourseInfoSidebar
+              instructor={course.instructor}
+              duration={course.duration}
+              rating={course.rating}
+            />
+          )}
         </div>
       </div>
+
+      <EditCourseModal
+        open={isEditOpen}
+        onClose={() => setIsEditOpen(false)}
+        course={course}
+        onSave={handleSaveCourse}
+      />
     </div>
   );
 }

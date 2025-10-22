@@ -1,24 +1,30 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import CourseCard from "../common/CourseCard";
 
 export default function UploadedCoursesSection() {
   const navigate = useNavigate();
 
-  // بيانات الدورات المرفوعة (مثال، يمكن جلبها من API)
   const uploadedCourses = [
     {
-      id: 1,
-      title: "دورة تصميم واجهات المستخدم",
-      youtubeLink: "https://www.youtube.com/watch?v=example1",
-      description: "تعلم تصميم واجهات مستخدم جذابة باستخدام Figma.",
-      duration: "15 ساعة",
-    },
-    {
-      id: 2,
-      title: "أساسيات البرمجة بلغة Python",
-      youtubeLink: "https://www.youtube.com/watch?v=example2",
-      description: "مقدمة في البرمجة باستخدام Python للمبتدئين.",
-      duration: "20 ساعة",
+      id: 7,
+      title: "React المتقدم - من الصفر إلى الاحتراف",
+      image:
+        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=500&q=80",
+      views: 1245,
+      rating: 4.9,
+      students: 856,
+      duration: "32 ساعة",
+      price: "149 ريال",
+      original: "299 ريال",
+      level: "متقدم",
+      description:
+        "تعلم بناء تطبيقات ويب تفاعلية باستخدام أحدث إصدارات React مع مشاريع عملية حقيقية.",
+      hasExam: true,
+      examSchedule: [
+        { date: "2025-11-01", time: "10:00 صباحًا" },
+        { date: "2025-11-15", time: "02:00 مساءً" },
+      ],
     },
   ];
 
@@ -35,28 +41,16 @@ export default function UploadedCoursesSection() {
           إضافة دورة جديدة
         </button>
       </div>
-      {uploadedCourses.length === 0 ? (
-        <p className="text-gray-500 text-center">لم تقم برفع أي دورات بعد.</p>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {uploadedCourses.map((course) => (
-            <div
-              key={course.id}
-              onClick={() => navigate(`/courses/${course.id}`)}
-              className="p-4 border border-gray-200 rounded-xl hover:shadow-lg transition cursor-pointer"
-            >
-              <img
-                src={`https://img.youtube.com/vi/${course.youtubeLink.split("v=")[1]}/hqdefault.jpg`}
-                alt={course.title}
-                className="rounded-lg mb-3 h-40 w-full object-cover"
-              />
-              <h4 className="font-medium text-gray-800">{course.title}</h4>
-              <p className="text-sm text-gray-500 mt-1">مدة الدورة: {course.duration}</p>
-              <p className="text-sm text-gray-500 mt-1">{course.description}</p>
-            </div>
-          ))}
-        </div>
-      )}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {uploadedCourses.map((course) => (
+          <CourseCard
+            key={course.id}
+            course={course}
+            onClick={() => navigate(`/courses/${course.id}`)}
+            mode={"profile"}
+          />
+        ))}
+      </div>
     </section>
   );
 }

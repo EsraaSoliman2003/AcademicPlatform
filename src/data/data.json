@@ -1,0 +1,168 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Introduction to Web Development",
+      "description": "Learn the basics of HTML, CSS, and JavaScript to start your journey as a web developer.",
+      "image": "https://images.unsplash.com/photo-1581091012184-5c7b3f6b2a2a?auto=format&fit=crop&w=800&q=80",
+      "instructor": "John Doe",
+      "instructorId": 1,
+      "duration": "6 hours",
+      "rating": 4.8,
+      "videos": [
+        {
+          "id": 1,
+          "title": "Getting Started with HTML",
+          "url": "/videos/lesson1.mp4"
+        },
+        { "id": 2, "title": "CSS Fundamentals", "url": "/videos/lesson2.mp4" },
+        {
+          "id": 3,
+          "title": "Intro to JavaScript",
+          "url": "/videos/lesson3.mp4"
+        },
+        { "id": 4, "title": "Intro to React", "url": "/videos/lesson4.mp4" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Advanced React Development",
+      "description": "Deep dive into React hooks, context, and performance optimization techniques.",
+      "image": "https://images.unsplash.com/photo-1603570419989-6e3b3f3b1a3e?auto=format&fit=crop&w=800&q=80",
+      "instructor": "Jane Smith",
+      "instructorId": 2,
+      "duration": "8 hours",
+      "rating": 4.9,
+      "videos": [
+        {
+          "id": 1,
+          "title": "React Hooks Overview",
+          "url": "/videos/lesson1.mp4"
+        },
+        { "id": 2, "title": "Using Context API", "url": "/videos/lesson2.mp4" },
+        {
+          "id": 3,
+          "title": "Performance Optimization",
+          "url": "/videos/lesson3.mp4"
+        },
+        {
+          "id": 4,
+          "title": "Building Custom Hooks",
+          "url": "/videos/lesson4.mp4"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Full Stack with Node.js & MongoDB",
+      "description": "Learn backend development with Node.js, Express, and MongoDB integration.",
+      "image": "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?auto=format&fit=crop&w=800&q=80",
+      "instructor": "Michael Lee",
+      "instructorId": 3,
+      "duration": "10 hours",
+      "rating": 4.7,
+      "videos": [
+        {
+          "id": 1,
+          "title": "Setting up Node.js",
+          "url": "/videos/lesson1.mp4"
+        },
+        { "id": 2, "title": "Express Routing", "url": "/videos/lesson2.mp4" },
+        { "id": 3, "title": "MongoDB Basics", "url": "/videos/lesson3.mp4" },
+        { "id": 4, "title": "REST API Project", "url": "/videos/lesson4.mp4" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "UI/UX Design Fundamentals",
+      "description": "Master the principles of good design, color theory, and user experience research.",
+      "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=800&q=80",
+      "instructor": "Emily Brown",
+      "instructorId": 4,
+      "duration": "5 hours",
+      "rating": 4.6,
+      "videos": [
+        { "id": 1, "title": "Intro to UI/UX", "url": "/videos/lesson1.mp4" },
+        {
+          "id": 2,
+          "title": "Color & Typography",
+          "url": "/videos/lesson2.mp4"
+        },
+        { "id": 3, "title": "Wireframing Tools", "url": "/videos/lesson3.mp4" },
+        { "id": 4, "title": "User Testing", "url": "/videos/lesson4.mp4" }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Python for Beginners",
+      "description": "Start coding with Python, the easiest and most powerful programming language.",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+      "instructor": "Robert Green",
+      "instructorId": 5,
+      "duration": "7 hours",
+      "rating": 4.8,
+      "videos": [
+        {
+          "id": 1,
+          "title": "Introduction to Python",
+          "url": "/videos/lesson1.mp4"
+        },
+        {
+          "id": 2,
+          "title": "Variables & Data Types",
+          "url": "/videos/lesson2.mp4"
+        },
+        {
+          "id": 3,
+          "title": "Functions in Python",
+          "url": "/videos/lesson3.mp4"
+        },
+        { "id": 4, "title": "File Handling", "url": "/videos/lesson4.mp4" }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Data Analysis with Pandas",
+      "description": "Analyze and visualize data efficiently using Python and Pandas library.",
+      "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+      "instructor": "Sophia Carter",
+      "instructorId": 6,
+      "duration": "9 hours",
+      "rating": 4.9,
+      "videos": [
+        { "id": 1, "title": "DataFrames Basics", "url": "/videos/lesson1.mp4" },
+        { "id": 2, "title": "Data Cleaning", "url": "/videos/lesson2.mp4" },
+        { "id": 3, "title": "Visualization", "url": "/videos/lesson3.mp4" },
+        { "id": 4, "title": "Mini Project", "url": "/videos/lesson4.mp4" }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Machine Learning Essentials",
+      "description": "Understand the fundamentals of machine learning and build your first model.",
+      "image": "https://images.unsplash.com/photo-1517142089942-ba376ce32a0a?auto=format&fit=crop&w=800&q=80",
+      "instructor": "Daniel White",
+      "instructorId": 7,
+      "duration": "12 hours",
+      "rating": 4.9,
+      "videos": [
+        {
+          "id": 1,
+          "title": "Intro to Machine Learning",
+          "url": "/videos/lesson1.mp4"
+        },
+        {
+          "id": 2,
+          "title": "Supervised Learning",
+          "url": "/videos/lesson2.mp4"
+        },
+        {
+          "id": 3,
+          "title": "Unsupervised Learning",
+          "url": "/videos/lesson3.mp4"
+        },
+        { "id": 4, "title": "Building Models", "url": "/videos/lesson4.mp4" }
+      ]
+    }
+  ]
+}

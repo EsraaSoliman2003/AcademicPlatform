@@ -36,7 +36,7 @@ export default function Profile() {
       <PersonalInfo userData={userData} />
       <EnrolledCoursesSection />
       <UploadedCoursesSection />
-      <ProgressStats />
+      {/* <ProgressStats /> */}
       <SettingsSection onChangePassword={() => setIsPasswordModalOpen(true)} />
 
       {/* نماذج التعديل */}

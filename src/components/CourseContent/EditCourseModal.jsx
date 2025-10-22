@@ -7,6 +7,7 @@ export default function EditCourseModal({ open, onClose, course, onSave }) {
     description: course.description,
     image: course.image,
     videos: course.videos || [],
+    pdfs: course.pdfs || [],
   });
 
   if (!open) return null;
@@ -29,6 +30,22 @@ export default function EditCourseModal({ open, onClose, course, onSave }) {
   const handleDeleteVideo = (index) => {
     const updatedVideos = formData.videos.filter((_, i) => i !== index);
     setFormData({ ...formData, videos: updatedVideos });
+  };
+
+  const handlePdfChange = (index, field, value) => {
+    const updatedPdfs = [...formData.pdfs];
+    updatedPdfs[index][field] = value;
+    setFormData({ ...formData, pdfs: updatedPdfs });
+  };
+
+  const handleAddPdf = () => {
+    const newPdf = { id: Date.now(), title: "", url: "" };
+    setFormData({ ...formData, pdfs: [...formData.pdfs, newPdf] });
+  };
+
+  const handleDeletePdf = (index) => {
+    const updatedPdfs = formData.pdfs.filter((_, i) => i !== index);
+    setFormData({ ...formData, pdfs: updatedPdfs });
   };
 
   const handleSave = () => {
@@ -67,7 +84,7 @@ export default function EditCourseModal({ open, onClose, course, onSave }) {
             value={formData.description}
             onChange={handleChange}
             placeholder="Course Description"
-            className="border border-gray-300 rounded-lg p-2 h-24 resize-none"
+            className="border border-gray-300 rounded-lg p-2"
           />
 
           <label className="font-semibold text-gray-700">Image URL</label>
@@ -75,81 +92,103 @@ export default function EditCourseModal({ open, onClose, course, onSave }) {
             name="image"
             value={formData.image}
             onChange={handleChange}
-            placeholder="Image URL"
+            placeholder="https://example.com/image.jpg"
             className="border border-gray-300 rounded-lg p-2"
           />
         </div>
 
-        {/* Videos Section */}
-        <div className="border-t border-gray-200 pt-4">
-          <div className="flex justify-between items-center mb-3">
-            <h3 className="text-lg font-semibold text-gray-800">
-              Course Videos
-            </h3>
+        {/* 🎥 Video List */}
+        <div className="mb-6">
+          <div className="flex justify-between items-center mb-2">
+            <h3 className="font-semibold text-gray-800 text-lg">Videos</h3>
             <button
               onClick={handleAddVideo}
-              className="flex items-center gap-1 text-primary font-medium hover:underline"
+              className="flex items-center gap-1 text-sm bg-blue-500 text-white px-3 py-1 rounded-lg hover:bg-blue-600"
             >
-              <Plus size={18} /> Add Video
+              <Plus size={16} /> Add Video
             </button>
           </div>
 
-          {formData.videos.length === 0 ? (
-            <p className="text-gray-500 italic">No videos yet.</p>
-          ) : (
-            formData.videos.map((video, index) => (
-              <div
-                key={video.id}
-                className="bg-gray-50 border border-gray-200 rounded-xl p-3 mb-3"
+          {formData.videos.map((video, index) => (
+            <div
+              key={video.id}
+              className="border rounded-lg p-3 mb-2 space-y-2"
+            >
+              <input
+                type="text"
+                value={video.title}
+                onChange={(e) =>
+                  handleVideoChange(index, "title", e.target.value)
+                }
+                placeholder="Video Title"
+                className="border border-gray-300 rounded-lg p-2 w-full"
+              />
+              <input
+                type="text"
+                value={video.url}
+                onChange={(e) =>
+                  handleVideoChange(index, "url", e.target.value)
+                }
+                placeholder="Video URL"
+                className="border border-gray-300 rounded-lg p-2 w-full"
+              />
+              <button
+                onClick={() => handleDeleteVideo(index)}
+                className="flex items-center gap-1 text-red-500 text-sm mt-1"
               >
-                <div className="flex justify-between items-center mb-2">
-                  <span className="font-medium text-gray-700">
-                    Video {index + 1}
-                  </span>
-                  <button
-                    onClick={() => handleDeleteVideo(index)}
-                    className="text-red-500 hover:text-red-700"
-                  >
-                    <Trash2 size={18} />
-                  </button>
-                </div>
-
-                <input
-                  value={video.title}
-                  onChange={(e) =>
-                    handleVideoChange(index, "title", e.target.value)
-                  }
-                  placeholder="Video Title"
-                  className="w-full border border-gray-300 rounded-lg p-2 mb-2"
-                />
-                <input
-                  value={video.url}
-                  onChange={(e) =>
-                    handleVideoChange(index, "url", e.target.value)
-                  }
-                  placeholder="Video URL"
-                  className="w-full border border-gray-300 rounded-lg p-2"
-                />
-              </div>
-            ))
-          )}
+                <Trash2 size={16} /> Remove Video
+              </button>
+            </div>
+          ))}
         </div>
 
-        {/* Buttons */}
-        <div className="flex justify-end gap-3 mt-6">
-          <button
-            onClick={onClose}
-            className="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 transition"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={handleSave}
-            className="px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition"
-          >
-            Save Changes
-          </button>
+        {/* 📄 PDF List */}
+        <div className="mb-6">
+          <div className="flex justify-between items-center mb-2">
+            <h3 className="font-semibold text-gray-800 text-lg">PDFs</h3>
+            <button
+              onClick={handleAddPdf}
+              className="flex items-center gap-1 text-sm bg-green-600 text-white px-3 py-1 rounded-lg hover:bg-green-700"
+            >
+              <Plus size={16} /> Add PDF
+            </button>
+          </div>
+
+          {formData.pdfs.map((pdf, index) => (
+            <div key={pdf.id} className="border rounded-lg p-3 mb-2 space-y-2">
+              <input
+                type="text"
+                value={pdf.title}
+                onChange={(e) =>
+                  handlePdfChange(index, "title", e.target.value)
+                }
+                placeholder="PDF Title"
+                className="border border-gray-300 rounded-lg p-2 w-full"
+              />
+              <input
+                type="text"
+                value={pdf.url}
+                onChange={(e) => handlePdfChange(index, "url", e.target.value)}
+                placeholder="PDF URL"
+                className="border border-gray-300 rounded-lg p-2 w-full"
+              />
+              <button
+                onClick={() => handleDeletePdf(index)}
+                className="flex items-center gap-1 text-red-500 text-sm mt-1"
+              >
+                <Trash2 size={16} /> Remove PDF
+              </button>
+            </div>
+          ))}
         </div>
+
+        {/* Save Button */}
+        <button
+          onClick={handleSave}
+          className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+        >
+          Save Changes
+        </button>
       </div>
     </div>
   );

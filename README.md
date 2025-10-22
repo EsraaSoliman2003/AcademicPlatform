@@ -46,6 +46,7 @@ Rafeeq/
 │   │   │   ├── CourseIntro.jsx
 │   │   │   ├── CourseOwnerActions.jsx
 │   │   │   ├── EditCourseModal.jsx
+│   │   │   ├── PdfList.jsx
 │   │   │   ├── VideoList.jsx
 │   │   │   └── VideoPlayer.jsx
 │   │   ├── Profile/

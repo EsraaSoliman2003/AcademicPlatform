@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import libraryBg from "../../assets/imgs/library.jpg";
 import personImg from "../../assets/imgs/person.png";
 import styles from "../../assets/animation/animation.module.css";
-import { Search } from "lucide-react";
 
 export default function HomeMain() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const navigate = useNavigate();
 
   const texts = [
     "نقدم لك أفضل المنصات التعليمية لتطوير مهاراتك والوصول لأقصى إمكانياتك. اكتشف الدورات، المشاريع، والموارد التي تساعدك على التعلم بشكل عملي واحترافي.",
@@ -15,6 +15,30 @@ export default function HomeMain() {
     "انضم إلى مجتمعنا التعليمي المتطور وكن جزءاً من شبكة من المحترفين. احصل على شهادات معتمدة تعزز مسيرتك المهنية.",
     "تعلم بالسرعة التي تناسبك مع مرونة كاملة في الوصول للمحتوى. مواد تعليمية شاملة تناسب جميع المستويات.",
   ];
+
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [message, setMessage] = useState("🧠 اختبر معرفتك!");
+
+  const quizQuestion = {
+    question: "ما هي لغة البرمجة الأكثر استخداماً في تطوير الويب؟",
+    options: [
+      { id: 1, text: "Python", correct: false },
+      { id: 2, text: "JavaScript", correct: true },
+      { id: 3, text: "Java", correct: false },
+      { id: 4, text: "C++", correct: false },
+    ],
+  };
+
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+
+    if (option.correct) {
+      setMessage("🎉 برافو! إجابة صحيحة!");
+      setTimeout(() => navigate("/courses/info/8"), 1500);
+    } else {
+      setMessage("❌ حاول مرة أخرى!");
+    }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -72,27 +96,43 @@ export default function HomeMain() {
             </p>
           </div>
 
-          <div
-            dir="rtl"
-            className="relative max-w-2xl mx-auto xl:mx-0 mb-8 group"
-          >
-            <div className="flex items-center bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl border border-white/20 hover:border-white/30 transition-all duration-300">
-              <input
-                type="text"
-                placeholder="ابحث عن دورات، مشاريع، موارد..."
-                className="w-full px-6 text-white bg-transparent focus:outline-none placeholder:text-white/60 rtl:text-right text-lg"
-              />
-              <Link className="bg-gradient-to-r from-primary to-primaryHover hover:from-primaryHover hover:to-primary text-darkText hover:text-darkText px-8 py-4 transition-all duration-300 flex items-center gap-2 hover:shadow-lg rounded-2xl">
-                <Search className="w-5 h-5" />
-                <span>بحث</span>
-              </Link>
+          <div className="max-w-sm mx-auto xl:mx-0 mb-6 bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/20 shadow-lg">
+            <h3 className="text-center text-lg font-semibold text-primary mb-3">
+              {message}
+            </h3>
+
+            <div className="text-center mb-4">
+              <h4 className="text-white text-sm font-medium mb-2">
+                {quizQuestion.question}
+              </h4>
+              <p className="text-xs text-white/70">اختر الإجابة الصحيحة 👇</p>
             </div>
 
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primaryHover/20 rounded-2xl blur-sm group-hover:blur-md transition-all duration-300 -z-10"></div>
+            <div className="grid grid-cols-2 gap-3">
+              {quizQuestion.options.map((option) => (
+                <button
+                  key={option.id}
+                  onClick={() => handleOptionSelect(option)}
+                  className={`p-3 rounded-lg text-sm transition-all duration-300 font-medium
+                    ${
+                      selectedOption?.id === option.id
+                        ? option.correct
+                          ? "bg-green-500/30 border border-green-400 text-white"
+                          : "bg-red-500/30 border border-red-400 text-white"
+                        : "bg-white/10 hover:bg-white/20 border border-white/20 text-white/80"
+                    }`}
+                >
+                  {option.text}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <Link to={"/courses"} className="bg-primary text-darkText hover:text-darkText px-6 py-3 rounded-lg hover:bg-primaryHover transition-all w-fit mx-auto xl:mx-0">
-            ابدأ الآن
+          <Link
+            to={"/courses"}
+            className="bg-primary text-darkText hover:text-darkText px-6 py-3 rounded-lg hover:bg-primaryHover transition-all w-fit mx-auto xl:mx-0"
+          >
+            ابدأ التصفح
           </Link>
         </div>
       </main>

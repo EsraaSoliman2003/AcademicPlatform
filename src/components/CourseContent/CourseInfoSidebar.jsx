@@ -22,9 +22,6 @@ export default function CourseInfoSidebar({ instructor, duration, rating }) {
           <span className="font-medium text-gray-800">{rating}</span>
         </div>
       </div>
-      <button className="w-full bg-primary text-white py-2 mt-4 rounded-xl hover:bg-primary/90 transition">
-        Enroll Now
-      </button>
     </div>
   );
 }

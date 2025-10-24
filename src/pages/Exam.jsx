@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import coursesData from "../data/data.json";
+import { useNavigate } from "react-router-dom";
 
 export default function Exam() {
+  const navigate = useNavigate();
   const { examId } = useParams();
   const [exam, setExam] = useState(null);
   const [timeLeft, setTimeLeft] = useState(0);
@@ -155,11 +157,6 @@ export default function Exam() {
 
             <div className="space-y-6">
               {exam.questions.map((q, idx) => {
-                const isCorrect =
-                  isSubmitted &&
-                  (q.type === "multiple-choice"
-                    ? answers[q.id] === q.answer
-                    : answers[q.id] === q.answer);
                 return (
                   <div
                     key={q.id}
@@ -261,9 +258,21 @@ export default function Exam() {
             )}
 
             {isSubmitted && (
-              <p className="mt-8 text-center text-xl font-bold text-green-700">
-                تم التسليم ✅ نتيجتك: {score} / {exam.questions.length}
-              </p>
+              <div className="mt-8 p-6 bg-white rounded-2xl shadow-lg text-center space-y-4">
+                <div className="text-green-700 text-2xl font-extrabold flex items-center justify-center space-x-2 rtl:space-x-reverse">
+                  <span>✅ تم التسليم</span>
+                  <span className="text-xl font-bold text-gray-800">
+                    نتيجتك: {score} / {exam.questions.length}
+                  </span>
+                </div>
+
+                <button
+                  onClick={() => navigate(-1)}
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg font-medium w-full md:w-1/2 mx-auto"
+                >
+                  العودة للخلف
+                </button>
+              </div>
             )}
           </div>
         </div>

@@ -85,19 +85,6 @@ export default function ExamsList({ exams }) {
     return "";
   };
 
-  const handleStartExam = (exam) => {
-    const examStart = new Date(exam.date);
-    const examEnd = new Date(
-      examStart.getTime() + exam.durationMinutes * 60000
-    );
-
-    if (currentTime >= examStart && currentTime <= examEnd) {
-      navigate(`/exam/${exam.examId}`)
-    } else {
-      alert("لا يمكن بدء الامتحان الآن");
-    }
-  };
-
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("ar-EG", {
@@ -174,7 +161,7 @@ export default function ExamsList({ exams }) {
                   {(exam.students === undefined || exam.students === null) &&
                     status === "متاح" && (
                       <button
-                        onClick={() => handleStartExam(exam)}
+                        onClick={() => navigate(`/exam/${exam.examId}`)}
                         className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center gap-2"
                       >
                         🚀 بدء الامتحان

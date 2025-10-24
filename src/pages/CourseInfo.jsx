@@ -19,7 +19,7 @@ export default function CourseInfo() {
   const location = useLocation();
   const showSnackbar = useSnackbarStore((state) => state.showSnackbar);
 
-  const course = coursesData.courses.find((c) => c.id.toString() === id);
+  const course = coursesData.NewCourses.find((c) => c.id.toString() === id);
 
   if (!course) {
     return (

@@ -58,7 +58,7 @@ export default function MostViewedCourses() {
           pagination={{ clickable: true, el: ".custom-pagination" }}
           className="pb-12"
         >
-          {coursesData.courses.map((course) => (
+          {coursesData.NewCourses.map((course) => (
             <SwiperSlide key={course.id}>
               <CourseCard
                 course={course}

@@ -18,7 +18,7 @@ export default function Exam() {
 
   useEffect(() => {
     let foundExam = null;
-    for (let course of coursesData.courses) {
+    for (let course of coursesData.EnrelledCourses) {
       foundExam = course.exams?.find((e) => e.examId === parseInt(examId));
       if (foundExam) break;
     }

@@ -5,11 +5,6 @@ import coursesData from "../../data/data.json";
 
 export default function UploadedCoursesSection() {
   const navigate = useNavigate();
-  const currentUser = { id: 7 };
-
-  const filteredCourses = coursesData.courses.filter(
-    (course) => course.instructorId === currentUser.id
-  );
 
   return (
     <section className="bg-white rounded-2xl shadow-md p-6 mb-8">
@@ -25,7 +20,7 @@ export default function UploadedCoursesSection() {
         </button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {filteredCourses.map((course) => (
+        {coursesData.UploadedCourses.map((course) => (
           <CourseCard
             key={course.id}
             course={course}

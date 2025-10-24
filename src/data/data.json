@@ -1,5 +1,5 @@
 {
-  "courses": [
+  "NewCourses": [
     {
       "id": 1,
       "title": "مقدمة في تطوير الويب",
@@ -13,12 +13,94 @@
       "views": 1200,
       "students": 300,
       "original": 99.99,
+      "price": 0,
+      "level": "مبتدئ"
+    },
+    {
+      "id": 2,
+      "title": "تطوير تطبيقات الموبايل باستخدام React Native",
+      "university": "جامعة عين شمس",
+      "description": "ابدأ في تعلم بناء تطبيقات الموبايل لنظامي Android وiOS باستخدام React Native.",
+      "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80",
+      "instructor": "سارة محمد",
+      "instructorId": 2,
+      "duration": "8 ساعات",
+      "rating": 4.9,
+      "views": 950,
+      "students": 210,
+      "original": 119.99,
+      "price": 0,
+      "level": "متوسط"
+    },
+    {
+      "id": 3,
+      "title": "تصميم واجهات المستخدم باستخدام Figma",
+      "university": "جامعة الإسكندرية",
+      "description": "تعلم أساسيات تصميم واجهات المستخدم وتجربة المستخدم باستخدام Figma بخطوات عملية.",
+      "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+      "instructor": "أحمد خالد",
+      "instructorId": 3,
+      "duration": "5 ساعات",
+      "rating": 4.7,
+      "views": 800,
+      "students": 180,
+      "original": 79.99,
+      "price": 0,
+      "level": "مبتدئ"
+    },
+    {
+      "id": 4,
+      "title": "تحليل البيانات باستخدام Python",
+      "university": "جامعة المنصورة",
+      "description": "تعلم استخدام Python لتحليل البيانات وإنتاج تقارير احترافية باستخدام Pandas وMatplotlib.",
+      "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80",
+      "instructor": "منى علي",
+      "instructorId": 4,
+      "duration": "10 ساعات",
+      "rating": 4.6,
+      "views": 1800,
+      "students": 450,
+      "original": 129.99,
+      "price": 0,
+      "level": "متوسط"
+    },
+    {
+      "id": 5,
+      "title": "أساسيات البرمجة باستخدام C#",
+      "university": "جامعة طنطا",
+      "description": "ابدأ رحلتك في تعلم لغة C# مع تطبيقات عملية على الكونسول والمشاريع الصغيرة.",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+      "instructor": "خالد عبد الله",
+      "instructorId": 5,
+      "duration": "7 ساعات",
+      "rating": 4.9,
+      "views": 1100,
+      "students": 280,
+      "original": 89.99,
+      "price": 0,
+      "level": "مبتدئ"
+    }
+  ],
+  "EnrelledCourses": [
+    {
+      "id": 6,
+      "title": "مقدمة في تطوير الويب",
+      "university": "جامعة القاهرة",
+      "description": "تعلم أساسيات HTML وCSS وJavaScript لبدء رحلتك كمطور ويب.",
+      "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+      "instructor": "جون دو",
+      "instructorId": 1,
+      "duration": "6 ساعات",
+      "rating": 4.8,
+      "views": 1200,
+      "students": 300,
+      "original": 99.99,
+      "price": 0,
       "level": "مبتدئ",
       "pdfs": [
         { "id": 1, "title": "ملف مقدمة HTML", "url": "/pdfs/file1.pdf" },
         { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
       ],
-      "price": 0,
       "videos": [
         { "id": 1, "title": "البدء مع HTML", "url": "/videos/lesson1.mp4" },
         { "id": 2, "title": "أساسيات CSS", "url": "/videos/lesson2.mp4" }
@@ -103,162 +185,10 @@
           "score": null
         }
       ]
-    },
-    {
-      "id": 2,
-      "title": "تطوير React المتقدم",
-      "university": "جامعة اسكندرية",
-      "description": "تعرف على مفاهيم الـ Hooks والـ Context وتقنيات تحسين الأداء في React.",
-      "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-      "instructor": "جين سميث",
-      "instructorId": 2,
-      "duration": "8 ساعات",
-      "rating": 4.9,
-      "views": 1200,
-      "students": 300,
-      "original": 99.99,
-      "level": "متوسط",
-      "pdfs": [
-        { "id": 1, "title": "ملف مقدمة HTML", "url": "/pdfs/file1.pdf" },
-        { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
-      ],
-      "price": 49.99,
-      "exams": [],
-      "videos": [
-        {
-          "id": 1,
-          "title": "نظرة عامة على React Hooks",
-          "url": "/videos/lesson1.mp4"
-        },
-        {
-          "id": 2,
-          "title": "استخدام Context API",
-          "url": "/videos/lesson2.mp4"
-        },
-        { "id": 3, "title": "تحسين الأداء", "url": "/videos/lesson3.mp4" },
-        { "id": 4, "title": "بناء Hooks مخصصة", "url": "/videos/lesson4.mp4" }
-      ]
-    },
-    {
-      "id": 3,
-      "title": "تطوير الواجهة الخلفية بـ Node.js وMongoDB",
-      "university": "جامعة اسكندرية",
-      "description": "تعلم تطوير الواجهة الخلفية باستخدام Node.js وExpress ودمجها مع MongoDB.",
-      "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-      "instructor": "مايكل لي",
-      "instructorId": 3,
-      "duration": "10 ساعات",
-      "rating": 4.7,
-      "views": 1200,
-      "students": 300,
-      "original": 99.99,
-      "level": "متوسط",
-      "pdfs": [
-        { "id": 1, "title": "ملف مقدمة HTML", "url": "/pdfs/file1.pdf" },
-        { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
-      ],
-      "price": 49.99,
-      "exams": [],
-      "videos": [
-        { "id": 1, "title": "إعداد Node.js", "url": "/videos/lesson1.mp4" },
-        {
-          "id": 2,
-          "title": "التعامل مع Express",
-          "url": "/videos/lesson2.mp4"
-        },
-        { "id": 3, "title": "أساسيات MongoDB", "url": "/videos/lesson3.mp4" },
-        { "id": 4, "title": "مشروع REST API", "url": "/videos/lesson4.mp4" }
-      ]
-    },
-    {
-      "id": 4,
-      "title": "أساسيات تصميم UI/UX",
-      "university": "جامعة عين شمس",
-      "description": "أتقن مبادئ التصميم الجيد، نظرية الألوان، وأبحاث تجربة المستخدم.",
-      "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-      "instructor": "إميلي براون",
-      "instructorId": 4,
-      "duration": "5 ساعات",
-      "rating": 4.6,
-      "views": 1200,
-      "students": 300,
-      "original": 99.99,
-      "level": "مبتدئ",
-      "pdfs": [
-        { "id": 1, "title": "ملف مقدمة HTML", "url": "/pdfs/file1.pdf" },
-        { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
-      ],
-      "price": 0,
-      "exams": [],
-      "videos": [
-        { "id": 1, "title": "مقدمة في UI/UX", "url": "/videos/lesson1.mp4" },
-        { "id": 2, "title": "الألوان والخطوط", "url": "/videos/lesson2.mp4" },
-        { "id": 3, "title": "أدوات Wireframing", "url": "/videos/lesson3.mp4" },
-        { "id": 4, "title": "اختبار المستخدم", "url": "/videos/lesson4.mp4" }
-      ]
-    },
-    {
-      "id": 5,
-      "title": "بايثون للمبتدئين",
-      "university": "جامعة عين شمس",
-      "description": "ابدأ البرمجة بلغة Python، السهلة والقوية لتعلم الأساسيات خطوة بخطوة.",
-      "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-      "instructor": "روبرت غرين",
-      "instructorId": 5,
-      "duration": "7 ساعات",
-      "rating": 4.8,
-      "views": 1200,
-      "students": 300,
-      "original": 99.99,
-      "level": "مبتدئ",
-      "pdfs": [
-        { "id": 1, "title": "ملف مقدمة HTML", "url": "/pdfs/file1.pdf" },
-        { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
-      ],
-      "price": 49.99,
-      "exams": [],
-      "videos": [
-        { "id": 1, "title": "مقدمة في Python", "url": "/videos/lesson1.mp4" },
-        {
-          "id": 2,
-          "title": "المتغيرات وأنواع البيانات",
-          "url": "/videos/lesson2.mp4"
-        },
-        { "id": 3, "title": "الدوال في Python", "url": "/videos/lesson3.mp4" },
-        { "id": 4, "title": "التعامل مع الملفات", "url": "/videos/lesson4.mp4" }
-      ]
-    },
-    {
-      "id": 6,
-      "title": "تحليل البيانات باستخدام Pandas",
-      "university": "جامعة المنوفية",
-      "description": "تعلم تحليل البيانات وعرضها بكفاءة باستخدام مكتبة Pandas في Python.",
-      "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-      "instructor": "صوفيا كارتر",
-      "instructorId": 6,
-      "duration": "9 ساعات",
-      "rating": 4.9,
-      "views": 1200,
-      "students": 300,
-      "original": 99.99,
-      "level": "متوسط",
-      "pdfs": [
-        { "id": 1, "title": "ملف مقدمة HTML", "url": "/pdfs/file1.pdf" },
-        { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
-      ],
-      "price": 49.99,
-      "exams": [],
-      "videos": [
-        {
-          "id": 1,
-          "title": "أساسيات DataFrames",
-          "url": "/videos/lesson1.mp4"
-        },
-        { "id": 2, "title": "تنظيف البيانات", "url": "/videos/lesson2.mp4" },
-        { "id": 3, "title": "التحليل والعرض", "url": "/videos/lesson3.mp4" },
-        { "id": 4, "title": "مشروع مصغر", "url": "/videos/lesson4.mp4" }
-      ]
-    },
+    }
+  ],
+
+  "UploadedCourses": [
     {
       "id": 7,
       "title": "مقدمة في تعلم الآلة",
@@ -272,13 +202,12 @@
       "views": 1200,
       "students": 300,
       "original": 99.99,
+      "price": 49.99,
       "level": "متقدم",
       "pdfs": [
         { "id": 1, "title": "ملف مقدمة HTML", "url": "/pdfs/file1.pdf" },
         { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
       ],
-      "price": 49.99,
-      "exams": [],
       "videos": [
         {
           "id": 1,
@@ -296,41 +225,67 @@
           "url": "/videos/lesson3.mp4"
         },
         { "id": 4, "title": "بناء النماذج", "url": "/videos/lesson4.mp4" }
-      ]
-    },
-    {
-      "id": 8,
-      "title": "احتراف JavaScript من الصفر",
-      "university": "جامعة القاهرة",
-      "description": "تعلم لغة JavaScript من البداية إلى الاحتراف مع تطبيقات عملية وأمثلة توضح المفاهيم الأساسية والمتقدمة.",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
-      "instructor": "إسراء سليمان",
-      "instructorId": 8,
-      "duration": "10 ساعات",
-      "rating": 4.9,
-      "views": 2200,
-      "students": 540,
-      "original": 99.99,
-      "level": "مبتدئ إلى متقدم",
-      "pdfs": [
-        { "id": 1, "title": "ملف مقدمة HTML", "url": "/pdfs/file1.pdf" },
-        { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
       ],
-      "price": 0,
-      "exams": [],
-      "videos": [
+      "exams": [
         {
-          "id": 1,
-          "title": "مقدمة في JavaScript",
-          "url": "/videos/lesson1.mp4"
+          "examId": 101,
+          "title": "امتحان HTML الأساسي",
+          "date": "2026-10-25T15:00:00",
+          "durationMinutes": 60,
+          "questions": [
+            {
+              "id": 1,
+              "question": "ما هو HTML؟",
+              "type": "multiple-choice",
+              "options": ["لغة برمجة", "لغة ترميز", "قاعدة بيانات"],
+              "answer": 1
+            },
+            {
+              "id": 2,
+              "question": "HTML عبارة عن لغة ترميز؟",
+              "type": "true-false",
+              "answer": "true"
+            }
+          ],
+          "students": 0
         },
         {
-          "id": 2,
-          "title": "المتغيرات وأنواع البيانات",
-          "url": "/videos/lesson2.mp4"
+          "examId": 102,
+          "title": "امتحان CSS الأساسي",
+          "date": "2025-10-20T14:00:00",
+          "durationMinutes": 45,
+          "questions": [
+            {
+              "id": 1,
+              "question": "CSS تتحكم في تصميم الصفحة؟",
+              "type": "true-false",
+              "answer": "true"
+            }
+          ],
+          "students": 230
         },
-        { "id": 3, "title": "الدوال والكائنات", "url": "/videos/lesson3.mp4" },
-        { "id": 4, "title": "DOM وEvents", "url": "/videos/lesson4.mp4" }
+        {
+          "examId": 103,
+          "title": "امتحان HTML الأساسي",
+          "date": "2025-10-23T15:00:00",
+          "durationMinutes": 60000000000,
+          "questions": [
+            {
+              "id": 1,
+              "question": "ما هو HTML؟",
+              "type": "multiple-choice",
+              "options": ["لغة برمجة", "لغة ترميز", "قاعدة بيانات"],
+              "answer": 1
+            },
+            {
+              "id": 2,
+              "question": "HTML عبارة عن لغة ترميز؟",
+              "type": "true-false",
+              "answer": "true"
+            }
+          ],
+          "students": 0
+        }
       ]
     }
   ]

@@ -22,7 +22,7 @@ export default function Courses() {
   const universitiesData = useMemo(() => {
     const grouped = {};
 
-    coursesData.courses.forEach((course) => {
+    coursesData.NewCourses.forEach((course) => {
       if (!grouped[course.university]) {
         grouped[course.university] = {
           id: Object.keys(grouped).length + 1,

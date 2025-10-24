@@ -5,7 +5,7 @@ export default function ExamsScheduleModal({ isOpen, onClose }) {
 
   const now = new Date();
 
-  const coursesWithUpcomingExams = coursesData.courses
+  const coursesWithUpcomingExams = coursesData.EnrelledCourses
     .map((course) => {
       const upcomingExams = course.exams.filter((exam) => {
         const examStart = new Date(exam.date);

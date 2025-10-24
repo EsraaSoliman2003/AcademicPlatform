@@ -1,52 +1,154 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import CourseIntro from "../components/CourseContent/CourseIntro";
-import VideoPlayer from "../components/CourseContent/VideoPlayer";
-import VideoList from "../components/CourseContent/VideoList";
-import PdfList from "../components/CourseContent/PdfList";
 import CourseInfoSidebar from "../components/CourseContent/CourseInfoSidebar";
-import CourseOwnerActions from "../components/CourseContent/CourseOwnerActions";
+import CourseIntro from "../components/CourseContent/CourseIntro";
+import CourseManagement from "../components/CourseContent/CourseManagement";
 import EditCourseModal from "../components/CourseContent/EditCourseModal";
 import ExamsList from "../components/CourseContent/ExamsList";
+import PdfList from "../components/CourseContent/PdfList";
+import VideoList from "../components/CourseContent/VideoList";
+import VideoPdfModal from "../components/CourseContent/VideoPdfModal";
+import VideoPlayer from "../components/CourseContent/VideoPlayer";
 import coursesData from "../data/data.json";
+import { useNavigate } from "react-router-dom";
 
 export default function CourseContent() {
+  const navigate = useNavigate();
+
   const { id } = useParams();
   const [course, setCourse] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(null);
   const [currentPdf, setCurrentPdf] = useState(null);
   const [activeTab, setActiveTab] = useState("videos");
   const [isEditOpen, setIsEditOpen] = useState(false);
-
-  const currentUser = { id: 7 };
+  const [isVideoPdfModalOpen, setIsVideoPdfModalOpen] = useState(false);
+  const [currentModalType, setCurrentModalType] = useState(null);
+  const [currentEditData, setCurrentEditData] = useState(null);
 
   useEffect(() => {
     const foundCourse = coursesData.courses.find((c) => c.id === parseInt(id));
     if (foundCourse) {
       setCourse(foundCourse);
-      setCurrentVideo(foundCourse.videos[0]);
-      if (foundCourse.pdfs?.length) setCurrentPdf(foundCourse.pdfs[0]);
+
+      const firstVideo = foundCourse.videos?.[0];
+      if (firstVideo) setCurrentVideo(firstVideo);
+
+      const firstPdf = foundCourse.pdfs?.[0];
+      if (firstPdf) setCurrentPdf(firstPdf);
     }
   }, [id]);
 
   if (!course) {
     return (
       <div className="flex justify-center items-center h-screen text-gray-500">
-        Loading course...
+        جاري تحميل الدورة...
       </div>
     );
   }
 
-  const isOwner = currentUser.id === course.instructorId;
+  const handleAddVideo = () => {
+    setCurrentModalType("video");
+    setCurrentEditData(null);
+    setIsVideoPdfModalOpen(true);
+  };
 
-  const handleEditClick = () => setIsEditOpen(true);
+  const handleEditVideo = (video) => {
+    setCurrentModalType("video");
+    setCurrentEditData(video);
+    setIsVideoPdfModalOpen(true);
+  };
+
+  const handleSaveVideo = (videoData) => {
+    if (currentEditData) {
+      setCourse((prev) => ({
+        ...prev,
+        videos: prev.videos.map((v) => (v.id === videoData.id ? videoData : v)),
+      }));
+    } else {
+      setCourse((prev) => ({
+        ...prev,
+        videos: [...(prev.videos || []), videoData],
+      }));
+    }
+  };
+
+  const handleDeleteVideo = (videoId) => {
+    if (window.confirm("هل أنت متأكد من حذف هذا الفيديو؟")) {
+      setCourse((prev) => ({
+        ...prev,
+        videos: prev.videos.filter((v) => v.id !== videoId),
+      }));
+    }
+  };
+
+  const handleAddPdf = () => {
+    setCurrentModalType("pdf");
+    setCurrentEditData(null);
+    setIsVideoPdfModalOpen(true);
+  };
+
+  const handleEditPdf = (pdf) => {
+    setCurrentModalType("pdf");
+    setCurrentEditData(pdf);
+    setIsVideoPdfModalOpen(true);
+  };
+
+  const handleSavePdf = (pdfData) => {
+    if (currentEditData) {
+      setCourse((prev) => ({
+        ...prev,
+        pdfs: prev.pdfs.map((p) => (p.id === pdfData.id ? pdfData : p)),
+      }));
+    } else {
+      setCourse((prev) => ({
+        ...prev,
+        pdfs: [...(prev.pdfs || []), pdfData],
+      }));
+    }
+  };
+
+  const handleDeletePdf = (pdfId) => {
+    if (window.confirm("هل أنت متأكد من حذف هذا الملف؟")) {
+      setCourse((prev) => ({
+        ...prev,
+        pdfs: prev.pdfs.filter((p) => p.id !== pdfId),
+      }));
+    }
+  };
+
+  const handleCreateExam = () => {
+    const newExam = {
+      examId: Date.now(),
+      title: "امتحان جديد",
+      date: new Date().toISOString(),
+      durationMinutes: 30,
+      questions: [],
+      studentStatus: "متاح",
+    };
+
+    setCourse((prev) => ({
+      ...prev,
+      exams: [...(prev.exams || []), newExam],
+    }));
+
+    navigate(`/exam/${newExam.examId}`);
+  };
+
+  const handleEditExam = (exam) => {
+    navigate(`/exam/${exam.examId}`);
+  };
+
+  const handleDeleteExam = (examId) => {
+    if (window.confirm("هل أنت متأكد من حذف هذا الامتحان؟")) {
+      setCourse((prev) => ({
+        ...prev,
+        exams: prev.exams.filter((exam) => exam.examId !== examId),
+      }));
+    }
+  };
+
   const handleSaveCourse = (updatedData) => {
     setCourse((prev) => ({ ...prev, ...updatedData }));
-  };
-  const handleDelete = () => {
-    if (window.confirm("Are you sure you want to delete this course?")) {
-      alert("Course deleted!");
-    }
   };
 
   return (
@@ -70,7 +172,7 @@ export default function CourseContent() {
                     : "text-gray-500 hover:text-gray-700"
                 }`}
               >
-                🎥 Videos
+                🎥 الفيديوهات
               </button>
               <button
                 onClick={() => setActiveTab("pdfs")}
@@ -80,7 +182,7 @@ export default function CourseContent() {
                     : "text-gray-500 hover:text-gray-700"
                 }`}
               >
-                📄 PDFs
+                📄 الملفات
               </button>
               <button
                 onClick={() => setActiveTab("exams")}
@@ -90,7 +192,7 @@ export default function CourseContent() {
                     : "text-gray-500 hover:text-gray-700"
                 }`}
               >
-                📝 Exams
+                📝 الامتحانات
               </button>
             </div>
 
@@ -98,7 +200,6 @@ export default function CourseContent() {
             {activeTab === "videos" ? (
               <>
                 <VideoPlayer videoUrl={currentVideo?.url} />
-
                 <VideoList videos={course.videos} onSelect={setCurrentVideo} />
               </>
             ) : activeTab === "exams" ? (
@@ -115,7 +216,7 @@ export default function CourseContent() {
                   </div>
                 ) : (
                   <p className="text-gray-500 text-center py-10">
-                    No PDFs available
+                    لا توجد ملفات متاحة
                   </p>
                 )}
                 <PdfList pdfs={course.pdfs} onSelect={setCurrentPdf} />
@@ -125,11 +226,17 @@ export default function CourseContent() {
 
           {/* 🔹 Sidebar / Owner Actions */}
           {isOwner ? (
-            <CourseOwnerActions
-              onAddLesson={() => alert("Add Lesson clicked")}
-              onEdit={handleEditClick}
-              onDelete={handleDelete}
-              onCreateExam={() => alert("Create Exam clicked")}
+            <CourseManagement
+              course={course}
+              onAddVideo={handleAddVideo}
+              onEditVideo={handleEditVideo}
+              onDeleteVideo={handleDeleteVideo}
+              onAddPdf={handleAddPdf}
+              onEditPdf={handleEditPdf}
+              onDeletePdf={handleDeletePdf}
+              onCreateExam={handleCreateExam}
+              onEditExam={handleEditExam}
+              onDeleteExam={handleDeleteExam}
             />
           ) : (
             <CourseInfoSidebar
@@ -141,11 +248,20 @@ export default function CourseContent() {
         </div>
       </div>
 
+      {/* Modals */}
       <EditCourseModal
         open={isEditOpen}
         onClose={() => setIsEditOpen(false)}
         course={course}
         onSave={handleSaveCourse}
+      />
+
+      <VideoPdfModal
+        open={isVideoPdfModalOpen}
+        onClose={() => setIsVideoPdfModalOpen(false)}
+        type={currentModalType}
+        data={currentEditData}
+        onSave={currentModalType === "video" ? handleSaveVideo : handleSavePdf}
       />
     </div>
   );

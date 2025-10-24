@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const StatusIcon = ({ status }) => {
   const icons = {
     قادم: "🕒",
+    متاح: "✅",
     انتهى: "❌",
     مكتمل: "✔️",
     غائب: "⏰",
@@ -11,7 +12,15 @@ const StatusIcon = ({ status }) => {
   return <span className="text-xl ml-2">{icons[status]}</span>;
 };
 
-const StatusBadge = ({ status }) => {
+const StatusBadge = ({ status, students }) => {
+  if (students !== undefined && students !== null) {
+    return (
+      <div className="inline-flex items-center px-3 py-1 rounded-full border bg-gray-100 text-gray-800 border-gray-200">
+        👥 الطلاب: {students}
+      </div>
+    );
+  }
+
   if (status === "متاح") return null;
 
   const statusColors = {
@@ -125,7 +134,7 @@ export default function ExamsList({ exams }) {
                     <h3 className="text-xl font-bold text-gray-900 text-right">
                       {exam.title}
                     </h3>
-                    <StatusBadge status={status} />
+                    <StatusBadge status={status} students={exam.students} />
                   </div>
 
                   <div className="space-y-2 text-right">
@@ -160,14 +169,15 @@ export default function ExamsList({ exams }) {
                 </div>
 
                 <div className="flex justify-center lg:justify-end">
-                  {status === "متاح" && (
-                    <button
-                      onClick={() => handleStartExam(exam)}
-                      className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center gap-2"
-                    >
-                      🚀 بدء الامتحان
-                    </button>
-                  )}
+                  {(exam.students === undefined || exam.students === null) &&
+                    status === "متاح" && (
+                      <button
+                        onClick={() => handleStartExam(exam)}
+                        className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center gap-2"
+                      >
+                        🚀 بدء الامتحان
+                      </button>
+                    )}
                 </div>
               </div>
             </div>

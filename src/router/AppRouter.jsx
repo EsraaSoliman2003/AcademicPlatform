@@ -20,6 +20,8 @@ import AddCourse from "../pages/AddCourse";
 import CourseInfo from "../pages/CourseInfo";
 import Exam from "../pages/Exam";
 import ScrollToTop from "./ScrollToTop";
+import CreateExam from "../pages/CreateExam";
+import EditExam from "../pages/EditExam";
 
 export default function AppRouter() {
   return (
@@ -40,6 +42,8 @@ export default function AppRouter() {
         <Route path="/courses/:id" element={<CourseContent />} />
         <Route path="/courses/info/:id" element={<CourseInfo />} />
         <Route path="/exam/:examId" element={<Exam />} />
+        <Route path="/exam/create/:examId" element={<CreateExam />} />
+        <Route path="/exam/edit/:examId" element={<EditExam />} />
         <Route path="/add-course" element={<AddCourse />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/admin" element={<Dashboard />} />

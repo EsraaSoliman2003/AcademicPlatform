@@ -13,8 +13,6 @@ export default function EnrolledCoursesSection() {
   const filteredCourses = coursesData.courses.filter(
     (course) => course.instructorId !== currentUser.id
   );
-  const coursesWithExams = filteredCourses.filter((course) => course.hasExam);
-  const hasExams = coursesWithExams.length > 0;
 
   return (
     <section className="bg-white rounded-2xl shadow-md p-6 mb-8">
@@ -22,14 +20,12 @@ export default function EnrolledCoursesSection() {
         <h3 className="text-xl font-semibold text-red-600 border-b border-gray-200 pb-2">
           الدورات المسجّلة
         </h3>
-        {hasExams && (
-          <button
-            onClick={() => setIsExamsModalOpen(true)}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium transition-colors duration-200 shadow-sm"
-          >
-            عرض مواعيد الامتحانات
-          </button>
-        )}
+        <button
+          onClick={() => setIsExamsModalOpen(true)}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium transition-colors duration-200 shadow-sm"
+        >
+          عرض مواعيد الامتحانات
+        </button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {filteredCourses.map((course) => (
@@ -45,7 +41,6 @@ export default function EnrolledCoursesSection() {
       <ExamsScheduleModal
         isOpen={isExamsModalOpen}
         onClose={() => setIsExamsModalOpen(false)}
-        coursesWithExams={coursesWithExams}
       />
     </section>
   );

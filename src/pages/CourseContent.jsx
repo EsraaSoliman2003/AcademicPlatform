@@ -7,6 +7,7 @@ import PdfList from "../components/CourseContent/PdfList";
 import CourseInfoSidebar from "../components/CourseContent/CourseInfoSidebar";
 import CourseOwnerActions from "../components/CourseContent/CourseOwnerActions";
 import EditCourseModal from "../components/CourseContent/EditCourseModal";
+import ExamsList from "../components/CourseContent/ExamsList";
 import coursesData from "../data/data.json";
 
 export default function CourseContent() {
@@ -81,6 +82,16 @@ export default function CourseContent() {
               >
                 📄 PDFs
               </button>
+              <button
+                onClick={() => setActiveTab("exams")}
+                className={`flex-1 py-2 text-center font-semibold transition ${
+                  activeTab === "exams"
+                    ? "border-b-2 border-blue-600 text-blue-600"
+                    : "text-gray-500 hover:text-gray-700"
+                }`}
+              >
+                📝 Exams
+              </button>
             </div>
 
             {/* 🔹 Content Area */}
@@ -90,6 +101,8 @@ export default function CourseContent() {
 
                 <VideoList videos={course.videos} onSelect={setCurrentVideo} />
               </>
+            ) : activeTab === "exams" ? (
+              <ExamsList exams={course.exams || []} />
             ) : (
               <>
                 {currentPdf ? (

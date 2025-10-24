@@ -1,9 +1,22 @@
-export default function ExamsScheduleModal({
-  isOpen,
-  onClose,
-  coursesWithExams,
-}) {
+import coursesData from "../../data/data.json";
+
+export default function ExamsScheduleModal({ isOpen, onClose }) {
   if (!isOpen) return null;
+
+  const now = new Date();
+
+  const coursesWithUpcomingExams = coursesData.courses
+    .map((course) => {
+      const upcomingExams = course.exams.filter((exam) => {
+        const examStart = new Date(exam.date);
+        const examEnd = new Date(
+          examStart.getTime() + exam.durationMinutes * 60000
+        );
+        return now <= examEnd;
+      });
+      return { ...course, exams: upcomingExams };
+    })
+    .filter((course) => course.exams.length > 0);
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
@@ -32,9 +45,9 @@ export default function ExamsScheduleModal({
           </button>
         </div>
 
-        {coursesWithExams.length === 0 ? (
+        {coursesWithUpcomingExams.length === 0 ? (
           <p className="text-gray-500 text-center text-lg">
-            لا توجد دورات تحتوي على امتحانات.
+            لا توجد امتحانات قادمة.
           </p>
         ) : (
           <div className="overflow-x-auto">
@@ -53,23 +66,32 @@ export default function ExamsScheduleModal({
                 </tr>
               </thead>
               <tbody>
-                {coursesWithExams.map((course) =>
-                  course.examSchedule.map((exam, index) => (
-                    <tr
-                      key={`${course.id}-${index}`}
-                      className="hover:bg-gray-50 transition-colors duration-200"
-                    >
-                      <td className="px-4 py-3 text-right text-gray-800 border-b border-gray-200">
-                        {course.title}
-                      </td>
-                      <td className="px-4 py-3 text-right text-gray-600 border-b border-gray-200">
-                        {exam.date}
-                      </td>
-                      <td className="px-4 py-3 text-right text-gray-600 border-b border-gray-200">
-                        {exam.time}
-                      </td>
-                    </tr>
-                  ))
+                {coursesWithUpcomingExams.map((course) =>
+                  course.exams.map((exam) => {
+                    const examDate = new Date(exam.date);
+                    const dateStr = examDate.toLocaleDateString("ar-EG");
+                    const timeStr = examDate.toLocaleTimeString("ar-EG", {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    });
+
+                    return (
+                      <tr
+                        key={`${course.id}-${exam.examId}`}
+                        className="hover:bg-gray-50 transition-colors duration-200"
+                      >
+                        <td className="px-4 py-3 text-right text-gray-800 border-b border-gray-200">
+                          {course.title}
+                        </td>
+                        <td className="px-4 py-3 text-right text-gray-600 border-b border-gray-200">
+                          {dateStr}
+                        </td>
+                        <td className="px-4 py-3 text-right text-gray-600 border-b border-gray-200">
+                          {timeStr}
+                        </td>
+                      </tr>
+                    );
+                  })
                 )}
               </tbody>
             </table>

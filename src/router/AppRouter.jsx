@@ -18,13 +18,13 @@ import CourseContent from "../pages/CourseContent";
 import Payment from "../pages/Payment";
 import AddCourse from "../pages/AddCourse";
 import CourseInfo from "../pages/CourseInfo";
+import Exam from "../pages/Exam";
 import ScrollToTop from "./ScrollToTop";
-
 
 export default function AppRouter() {
   return (
     <>
-      <ScrollToTop /> {/* 👈 بيرجّع الصفحة لأعلى عند التنقل */}
+      <ScrollToTop />
       <Routes>
         {/* Global Pages */}
         <Route path="/" element={<Home />} />
@@ -39,6 +39,7 @@ export default function AppRouter() {
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:id" element={<CourseContent />} />
         <Route path="/courses/info/:id" element={<CourseInfo />} />
+        <Route path="/exam/:examId" element={<Exam />} />
         <Route path="/add-course" element={<AddCourse />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/admin" element={<Dashboard />} />

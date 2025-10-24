@@ -21,16 +21,88 @@
       "price": 0,
       "videos": [
         { "id": 1, "title": "البدء مع HTML", "url": "/videos/lesson1.mp4" },
-        { "id": 2, "title": "أساسيات CSS", "url": "/videos/lesson2.mp4" },
-        {
-          "id": 3,
-          "title": "مقدمة في JavaScript",
-          "url": "/videos/lesson3.mp4"
-        },
-        { "id": 4, "title": "مقدمة في React", "url": "/videos/lesson4.mp4" }
+        { "id": 2, "title": "أساسيات CSS", "url": "/videos/lesson2.mp4" }
       ],
-      "hasExam": true,
-      "examSchedule": [{ "date": "2025-11-10", "time": "03:00 مساءً" }]
+      "exams": [
+        {
+          "examId": 101,
+          "title": "امتحان HTML الأساسي",
+          "date": "2026-10-25T15:00:00",
+          "durationMinutes": 60,
+          "questions": [
+            {
+              "id": 1,
+              "question": "ما هو HTML؟",
+              "type": "multiple-choice",
+              "options": ["لغة برمجة", "لغة ترميز", "قاعدة بيانات"],
+              "answer": 1
+            },
+            {
+              "id": 2,
+              "question": "HTML عبارة عن لغة ترميز؟",
+              "type": "true-false",
+              "answer": "true"
+            }
+          ],
+          "studentStatus": "متاح",
+          "score": null
+        },
+        {
+          "examId": 102,
+          "title": "امتحان CSS الأساسي",
+          "date": "2025-10-20T14:00:00",
+          "durationMinutes": 45,
+          "questions": [
+            {
+              "id": 1,
+              "question": "CSS تتحكم في تصميم الصفحة؟",
+              "type": "true-false",
+              "answer": "true"
+            }
+          ],
+          "studentStatus": "غائب",
+          "score": null
+        },
+        {
+          "examId": 103,
+          "title": "امتحان JavaScript الأساسي",
+          "date": "2025-10-15T14:00:00",
+          "durationMinutes": 60,
+          "questions": [
+            {
+              "id": 1,
+              "question": "JavaScript يمكنه تعديل محتوى الصفحة؟",
+              "type": "true-false",
+              "answer": "true"
+            }
+          ],
+          "studentStatus": "مكتمل",
+          "score": 90
+        },
+        {
+          "examId": 104,
+          "title": "امتحان HTML الأساسي",
+          "date": "2025-10-23T15:00:00",
+          "durationMinutes": 60000000000,
+          "questions": [
+            {
+              "id": 1,
+              "question": "ما هو HTML؟",
+              "type": "multiple-choice",
+              "options": ["لغة برمجة", "لغة ترميز", "قاعدة بيانات"],
+              "answer": 1
+            },
+            {
+              "id": 2,
+              "question": "HTML عبارة عن لغة ترميز؟",
+              "type": "true-false",
+              "answer": "true"
+            }
+          ],
+          "studentStatus": "متاح",
+          "score": null
+        }
+      ]
     },
     {
       "id": 2,
@@ -51,6 +123,7 @@
         { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
       ],
       "price": 49.99,
+      "exams": [],
       "videos": [
         {
           "id": 1,
@@ -85,6 +158,7 @@
         { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
       ],
       "price": 49.99,
+      "exams": [],
       "videos": [
         { "id": 1, "title": "إعداد Node.js", "url": "/videos/lesson1.mp4" },
         {
@@ -115,6 +189,7 @@
         { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
       ],
       "price": 0,
+      "exams": [],
       "videos": [
         { "id": 1, "title": "مقدمة في UI/UX", "url": "/videos/lesson1.mp4" },
         { "id": 2, "title": "الألوان والخطوط", "url": "/videos/lesson2.mp4" },
@@ -141,6 +216,7 @@
         { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
       ],
       "price": 49.99,
+      "exams": [],
       "videos": [
         { "id": 1, "title": "مقدمة في Python", "url": "/videos/lesson1.mp4" },
         {
@@ -171,6 +247,7 @@
         { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
       ],
       "price": 49.99,
+      "exams": [],
       "videos": [
         {
           "id": 1,
@@ -201,6 +278,7 @@
         { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
       ],
       "price": 49.99,
+      "exams": [],
       "videos": [
         {
           "id": 1,
@@ -239,6 +317,7 @@
         { "id": 2, "title": "دليل CSS", "url": "/pdfs/file2.pdf" }
       ],
       "price": 0,
+      "exams": [],
       "videos": [
         {
           "id": 1,
@@ -252,9 +331,7 @@
         },
         { "id": 3, "title": "الدوال والكائنات", "url": "/videos/lesson3.mp4" },
         { "id": 4, "title": "DOM وEvents", "url": "/videos/lesson4.mp4" }
-      ],
-      "hasExam": true,
-      "examSchedule": [{ "date": "2025-12-05", "time": "05:00 مساءً" }]
+      ]
     }
   ]
 }

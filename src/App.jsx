@@ -5,7 +5,8 @@ import MainLayout from "./layouts/MainLayout";
 function App() {
   const location = useLocation();
   const noLayoutRoutes = ["/login", "/register", "/forget-password"];
-  const isNoLayout = noLayoutRoutes.includes(location.pathname);
+  const isExamRoute = location.pathname.startsWith("/exam/");
+  const isNoLayout = noLayoutRoutes.includes(location.pathname) || isExamRoute;
 
   return isNoLayout ? (
     <AppRouter />

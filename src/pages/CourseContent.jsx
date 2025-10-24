@@ -27,7 +27,7 @@ export default function CourseContent() {
 
   useEffect(() => {
     const allCourses = [
-      ...(coursesData.EnrolledCourses || []),
+      ...(coursesData.EnrelledCourses || []),
       ...(coursesData.UploadedCourses || []),
     ];
 
@@ -43,7 +43,7 @@ export default function CourseContent() {
     }
   }, [id]);
 
-  const isOwner = coursesData.UploadedCourses.find(
+  const isOwner = coursesData.UploadedCourses.some(
     (c) => c.id === parseInt(id)
   );
 

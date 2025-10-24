@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const StatusIcon = ({ status }) => {
   const icons = {
@@ -41,6 +42,7 @@ const StatusBadge = ({ status, students }) => {
 };
 
 export default function ExamsList({ exams }) {
+  const navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -90,7 +92,7 @@ export default function ExamsList({ exams }) {
     );
 
     if (currentTime >= examStart && currentTime <= examEnd) {
-      window.open(`/exam/${exam.examId}`, "_blank");
+      navigate(`/exam/${exam.examId}`)
     } else {
       alert("لا يمكن بدء الامتحان الآن");
     }

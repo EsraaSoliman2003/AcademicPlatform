@@ -26,7 +26,12 @@ export default function CourseContent() {
   const [currentEditData, setCurrentEditData] = useState(null);
 
   useEffect(() => {
-    const foundCourse = coursesData.courses.find((c) => c.id === parseInt(id));
+    const allCourses = [
+      ...(coursesData.EnrolledCourses || []),
+      ...(coursesData.UploadedCourses || []),
+    ];
+
+    const foundCourse = allCourses.find((c) => c.id === parseInt(id));
     if (foundCourse) {
       setCourse(foundCourse);
 
@@ -37,6 +42,10 @@ export default function CourseContent() {
       if (firstPdf) setCurrentPdf(firstPdf);
     }
   }, [id]);
+
+  const isOwner = coursesData.UploadedCourses.find(
+    (c) => c.id === parseInt(id)
+  );
 
   if (!course) {
     return (

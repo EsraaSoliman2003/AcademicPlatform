@@ -44,10 +44,12 @@ Rafeeq/
 │   │   ├── CourseContent/
 │   │   │   ├── CourseInfoSidebar.jsx
 │   │   │   ├── CourseIntro.jsx
-│   │   │   ├── CourseOwnerActions.jsx
+│   │   │   ├── CourseManagement.jsx
 │   │   │   ├── EditCourseModal.jsx
+│   │   │   ├── ExamsList.jsx
 │   │   │   ├── PdfList.jsx
 │   │   │   ├── VideoList.jsx
+│   │   │   ├── VideoPdfModal.jsx
 │   │   │   └── VideoPlayer.jsx
 │   │   ├── Profile/
 │   │   │   ├── ChangePasswordModal.jsx
@@ -90,14 +92,18 @@ Rafeeq/
 │   │   │   └── Fotter.js
 │   │   └── MainLayout.jsx      # Main layout with header and footer
 │   ├── pages/                  # Page-level components
-│   │   ├── Home.jsx
 │   │   ├── About.jsx
-│   │   ├── Contact.jsx
-│   │   ├── Projects.jsx
-│   │   ├── CourseContent.jsx
-│   │   ├── Courses.jsx
 │   │   ├── AddCourse.jsx
+│   │   ├── Contact.jsx
+│   │   ├── CourseContent.jsx
+│   │   ├── CourseInfo.jsx
+│   │   ├── Courses.jsx
+│   │   ├── CreateCourse.jsx
+│   │   ├── EditExam.jsx
+│   │   ├── Exam.jsx
+│   │   ├── Home.jsx
 │   │   ├── Payment.jsx
+│   │   ├── Profile.jsx
 │   │   ├── Admin/
 │   │   │   ├── Dashboard.jsx
 │   │   │   ├── ManageCourses.jsx

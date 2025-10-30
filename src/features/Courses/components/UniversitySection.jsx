@@ -13,10 +13,10 @@ export default function UniversitySection({ university, courses }) {
           className="w-16 h-16 rounded-xl object-cover border-2 border-primary"
         />
         <div>
-          <h2 className="text-2xl font-bold text-lightText dark:text-darkText">
+          <h2 className="text-2xl font-bold text-lightText ">
             {university.name}
           </h2>
-          <p className="text-grayText dark:text-grayTextDark mt-1">
+          <p className="text-grayText  mt-1">
             {courses.length} كورس متاح
           </p>
         </div>

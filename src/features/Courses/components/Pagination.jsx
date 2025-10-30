@@ -20,9 +20,9 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-xl 
+        className="px-4 py-2 border border-gray-300  rounded-xl 
                  disabled:opacity-50 disabled:cursor-not-allowed
-                 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                 hover:bg-gray-50 transition-colors duration-200"
       >
         السابق
       </button>
@@ -35,7 +35,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
             className={`px-4 py-2 rounded-xl transition-colors duration-200 ${
               currentPage === page
                 ? "bg-primary text-white"
-                : "border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
+                : "border border-gray-300  hover:bg-gray-50 "
             } ${typeof page !== "number" ? "cursor-default" : ""}`}
             disabled={typeof page !== "number"}
           >
@@ -47,9 +47,9 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-xl 
+        className="px-4 py-2 border border-gray-300  rounded-xl 
                  disabled:opacity-50 disabled:cursor-not-allowed
-                 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                 hover:bg-gray-50 transition-colors duration-200"
       >
         التالي
       </button>

@@ -9,13 +9,13 @@ export default function CoursesHeader({ onSearch, totalCourses }) {
   };
 
   return (
-    <div className="bg-white   rounded-2xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+    <div className="bg-white   rounded-2xl shadow-lg p-6 border border-gray-200 ">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-lightText dark:text-darkText">
+          <h1 className="text-3xl font-bold text-lightText ">
             الكورسات المتاحة
           </h1>
-          <p className="text-grayText dark:text-grayTextDark mt-2">
+          <p className="text-grayText  mt-2">
             اكتشف {totalCourses} كورس في مختلف التخصصات
           </p>
         </div>
@@ -27,9 +27,9 @@ export default function CoursesHeader({ onSearch, totalCourses }) {
               placeholder="ابحث عن كورس، موضوع، أو مدرس..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-3 pr-12 border border-gray-300 dark:border-gray-600 rounded-2xl 
+              className="w-full px-4 py-3 pr-12 border border-gray-300  rounded-2xl 
                        focus:ring-2 focus:ring-primary focus:border-transparent
-                       dark:bg-gray-700 dark:text-white transition-colors duration-200"
+                         transition-colors duration-200"
             />
             <button
               type="submit"

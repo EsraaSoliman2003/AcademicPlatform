@@ -22,14 +22,14 @@ export default function ProfileHeader({ userData, onEditProfile }) {
   };
 
   return (
-    <div className="bg-white   rounded-2xl shadow-lg dark:shadow-navbarDark p-6 flex flex-col md:flex-row items-center md:items-start gap-6 mt-20 mb-8 border border-gray-200 dark:border-gray-700 transition-colors duration-300">
+    <div className="bg-white   rounded-2xl shadow-lg  p-6 flex flex-col md:flex-row items-center md:items-start gap-6 mt-20 mb-8 border border-gray-200  transition-colors duration-300">
       <div className="relative">
         <img
           src={profileImage}
           alt="User Avatar"
           className="w-32 h-32 rounded-full border-4 border-primary object-cover shadow-md"
         />
-        <span className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-white dark:border-darkBg"></span>
+        <span className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-white "></span>
         
         {/* زر تغيير الصورة */}
         <button
@@ -53,8 +53,8 @@ export default function ProfileHeader({ userData, onEditProfile }) {
       </div>
 
       <div className="flex-1 text-center md:text-right">
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-darkText">{userData.name}</h2>
-        <p className="text-gray-500 dark:text-gray-400 mt-1">الطالب في منصة رفيق للتعلم</p>
+        <h2 className="text-2xl font-bold text-gray-800 ">{userData.name}</h2>
+        <p className="text-gray-500  mt-1">الطالب في منصة رفيق للتعلم</p>
 
         <div className="flex justify-center md:justify-end gap-3 mt-4">
           <button 
@@ -66,7 +66,7 @@ export default function ProfileHeader({ userData, onEditProfile }) {
 
           <button 
             onClick={triggerFileInput}
-            className="border border-primary text-primary dark:text-accentColor px-5 py-2 rounded-lg font-medium hover:bg-lightPrimary dark:hover:bg-opacity-20 hover:shadow transition-all duration-300"
+            className="border border-primary text-primary  px-5 py-2 rounded-lg font-medium hover:bg-lightPrimary  hover:shadow transition-all duration-300"
           >
             تغيير الصورة
           </button>

@@ -32,14 +32,14 @@ export default function Payment() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100  ">
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 w-full max-w-md border border-gray-200 dark:border-gray-700">
-        <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800 dark:text-white">
+      <div className="bg-white  rounded-2xl shadow-xl p-8 w-full max-w-md border border-gray-200 ">
+        <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800 ">
           💳 صفحة الدفع
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label className="block text-sm font-medium text-gray-700 ">
               الاسم الكامل
             </label>
             <input
@@ -47,12 +47,12 @@ export default function Payment() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:border-gray-700 dark:text-white"
+              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500  "
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label className="block text-sm font-medium text-gray-700 ">
               البريد الإلكتروني
             </label>
             <input
@@ -60,12 +60,12 @@ export default function Payment() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:border-gray-700 dark:text-white"
+              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500  "
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label className="block text-sm font-medium text-gray-700 ">
               رقم البطاقة
             </label>
             <input
@@ -74,13 +74,13 @@ export default function Payment() {
               value={formData.cardNumber}
               onChange={handleChange}
               maxLength="16"
-              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:border-gray-700 dark:text-white"
+              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500  "
             />
           </div>
 
           <div className="flex gap-4">
             <div className="flex-1">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-medium text-gray-700 ">
                 تاريخ الانتهاء
               </label>
               <input
@@ -89,12 +89,12 @@ export default function Payment() {
                 value={formData.expiry}
                 onChange={handleChange}
                 placeholder="MM/YY"
-                className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:border-gray-700 dark:text-white"
+                className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500  "
               />
             </div>
 
             <div className="flex-1">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-medium text-gray-700 ">
                 CVV
               </label>
               <input
@@ -103,7 +103,7 @@ export default function Payment() {
                 value={formData.cvv}
                 onChange={handleChange}
                 maxLength="3"
-                className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:border-gray-700 dark:text-white"
+                className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500  "
               />
             </div>
           </div>

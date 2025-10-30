@@ -30,23 +30,23 @@ export default function CoursesFilter({ filters, onFilterChange, universities })
   };
 
   return (
-    <div className="bg-white   rounded-2xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 sticky top-4">
-      <h3 className="text-lg font-semibold text-lightText dark:text-darkText mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">
+    <div className="bg-white   rounded-2xl shadow-lg p-6 border border-gray-200  sticky top-4">
+      <h3 className="text-lg font-semibold text-lightText  mb-6 pb-2 border-b border-gray-200 ">
         🔍 تصفية النتائج
       </h3>
 
       <div className="space-y-6">
         {/* فلتر الجامعة */}
         <div>
-          <label className="block text-sm font-medium text-lightText dark:text-darkText mb-3">
+          <label className="block text-sm font-medium text-lightText  mb-3">
             الجامعة
           </label>
           <select
             value={filters.university}
             onChange={(e) => onFilterChange("university", e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-xl 
+            className="w-full px-3 py-2 border border-gray-300  rounded-xl 
                      focus:ring-2 focus:ring-primary focus:border-transparent
-                     dark:bg-gray-700 dark:text-white transition-colors duration-200"
+                       transition-colors duration-200"
           >
             <option value="all">جميع الجامعات</option>
             {universities.map(uni => (
@@ -59,15 +59,15 @@ export default function CoursesFilter({ filters, onFilterChange, universities })
 
         {/* فلتر التخصص */}
         <div>
-          <label className="block text-sm font-medium text-lightText dark:text-darkText mb-3">
+          <label className="block text-sm font-medium text-lightText  mb-3">
             التخصص
           </label>
           <select
             value={filters.category}
             onChange={(e) => onFilterChange("category", e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-xl 
+            className="w-full px-3 py-2 border border-gray-300  rounded-xl 
                      focus:ring-2 focus:ring-primary focus:border-transparent
-                     dark:bg-gray-700 dark:text-white transition-colors duration-200"
+                       transition-colors duration-200"
           >
             {filterOptions.category.map(option => (
               <option key={option.value} value={option.value}>
@@ -79,7 +79,7 @@ export default function CoursesFilter({ filters, onFilterChange, universities })
 
         {/* فلتر المستوى */}
         <div>
-          <label className="block text-sm font-medium text-lightText dark:text-darkText mb-3">
+          <label className="block text-sm font-medium text-lightText  mb-3">
             المستوى
           </label>
           <div className="space-y-2">
@@ -93,7 +93,7 @@ export default function CoursesFilter({ filters, onFilterChange, universities })
                   onChange={(e) => onFilterChange("level", e.target.value)}
                   className="text-primary focus:ring-primary"
                 />
-                <span className="mr-2 text-sm text-grayText dark:text-grayTextDark">
+                <span className="mr-2 text-sm text-grayText ">
                   {option.label}
                 </span>
               </label>
@@ -103,7 +103,7 @@ export default function CoursesFilter({ filters, onFilterChange, universities })
 
         {/* فلتر السعر */}
         <div>
-          <label className="block text-sm font-medium text-lightText dark:text-darkText mb-3">
+          <label className="block text-sm font-medium text-lightText  mb-3">
             السعر
           </label>
           <div className="space-y-2">
@@ -117,7 +117,7 @@ export default function CoursesFilter({ filters, onFilterChange, universities })
                   onChange={(e) => onFilterChange("price", e.target.value)}
                   className="text-primary focus:ring-primary"
                 />
-                <span className="mr-2 text-sm text-grayText dark:text-grayTextDark">
+                <span className="mr-2 text-sm text-grayText ">
                   {option.label}
                 </span>
               </label>
@@ -127,15 +127,15 @@ export default function CoursesFilter({ filters, onFilterChange, universities })
 
         {/* فلتر التقييم */}
         <div>
-          <label className="block text-sm font-medium text-lightText dark:text-darkText mb-3">
+          <label className="block text-sm font-medium text-lightText  mb-3">
             التقييم
           </label>
           <select
             value={filters.rating}
             onChange={(e) => onFilterChange("rating", e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-xl 
+            className="w-full px-3 py-2 border border-gray-300  rounded-xl 
                      focus:ring-2 focus:ring-primary focus:border-transparent
-                     dark:bg-gray-700 dark:text-white transition-colors duration-200"
+                       transition-colors duration-200"
           >
             {filterOptions.rating.map(option => (
               <option key={option.value} value={option.value}>
@@ -154,8 +154,8 @@ export default function CoursesFilter({ filters, onFilterChange, universities })
             onFilterChange("price", "all");
             onFilterChange("rating", "all");
           }}
-          className="w-full py-2 border border-gray-300 dark:border-gray-600 text-grayText 
-                   dark:text-grayTextDark rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 
+          className="w-full py-2 border border-gray-300  text-grayText 
+                    rounded-xl hover:bg-gray-50 
                    transition-colors duration-200 font-medium"
         >
           إعادة الضبط

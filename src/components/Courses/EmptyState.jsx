@@ -11,11 +11,11 @@ export default function EmptyState() {
           </svg>
         </div>
         
-        <h3 className="text-2xl font-bold text-lightText dark:text-darkText mb-4">
+        <h3 className="text-2xl font-bold text-lightText  mb-4">
           لا توجد نتائج
         </h3>
         
-        <p className="text-grayText dark:text-grayTextDark mb-8">
+        <p className="text-grayText  mb-8">
           لم نتمكن من العثور على أي كورسات تطابق معايير البحث الخاصة بك. 
           حاول تعديل الفلاتر أو مصطلحات البحث.
         </p>

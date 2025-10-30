@@ -28,7 +28,7 @@ export default function Profile() {
   return (
     <div
       dir="rtl"
-      className="min-h-screen bg-lightBg   text-lightText dark:text-darkText py-10 px-6 md:px-20 transition-colors duration-300">
+      className="min-h-screen bg-lightBg   text-lightText  py-10 px-6 md:px-20 transition-colors duration-300">
       <ProfileHeader
         userData={userData}
         onEditProfile={() => setIsEditModalOpen(true)}

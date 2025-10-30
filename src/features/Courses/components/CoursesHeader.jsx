@@ -9,10 +9,10 @@ export default function CoursesHeader({ onSearch, totalCourses }) {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
+    <div className="bg-white   rounded-2xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-lightText">
+          <h1 className="text-3xl font-bold text-lightText dark:text-darkText">
             الكورسات المتاحة
           </h1>
           <p className="text-grayText dark:text-grayTextDark mt-2">

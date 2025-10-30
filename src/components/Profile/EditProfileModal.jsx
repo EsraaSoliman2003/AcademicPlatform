@@ -22,7 +22,7 @@ export default function EditProfileModal({ isOpen, onClose, userData, onUpdate }
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white dark:bg-darkBg rounded-2xl shadow-lg w-full max-w-md p-6 transition-colors duration-300">
+      <div className="bg-white   rounded-2xl shadow-lg w-full max-w-md p-6 transition-colors duration-300">
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-xl font-semibold text-primary dark:text-accentColor">
             تعديل الملف الشخصي

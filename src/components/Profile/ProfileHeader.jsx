@@ -22,7 +22,7 @@ export default function ProfileHeader({ userData, onEditProfile }) {
   };
 
   return (
-    <div className="bg-white dark:bg-darkBg rounded-2xl shadow-lg dark:shadow-navbarDark p-6 flex flex-col md:flex-row items-center md:items-start gap-6 mt-20 mb-8 border border-gray-200 dark:border-gray-700 transition-colors duration-300">
+    <div className="bg-white   rounded-2xl shadow-lg dark:shadow-navbarDark p-6 flex flex-col md:flex-row items-center md:items-start gap-6 mt-20 mb-8 border border-gray-200 dark:border-gray-700 transition-colors duration-300">
       <div className="relative">
         <img
           src={profileImage}

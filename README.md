@@ -69,12 +69,43 @@ Rafeeq/
 │   │       ├── AuthContainer.jsx
 │   │       └── AuthInput.jsx
 │   ├── features/               # Feature-specific modules
-│   │   └──── auth/
-│   │       ├── Auth.css
-│   │       ├── login.jsx       # Login component
-│   │       ├── register.jsx    # Register component
-│   │       ├── ForgetPassword.jsx
-│   │       └── store.js        # Auth-related state management
+│   │   ├── auth/
+│   │   │   ├── Auth.css
+│   │   │   ├── login.jsx       # Login component
+│   │   │   ├── register.jsx    # Register component
+│   │   │   ├── ForgetPassword.jsx
+│   │   │   └── store.js        # Auth-related state management
+│   │   └── courses/
+│   │       ├── api/
+│   │       │   └── CourseApi.js
+│   │       ├── components/
+│   │       │   ├── CoursesList.jsx
+│   │       │   ├── CoursesHeader.jsx
+│   │       │   ├── CoursesFilter.jsx
+│   │       │   ├── UniversitySection.jsx
+│   │       │   ├── EmptyState.jsx
+│   │       │   ├── CourseInfoSidebar.jsx
+│   │       │   ├── CourseIntro.jsx
+│   │       │   ├── CourseManagement.jsx
+│   │       │   ├── EditCourseModal.jsx
+│   │       │   ├── ExamsList.jsx
+│   │       │   ├── PdfList.jsx
+│   │       │   ├── VideoList.jsx
+│   │       │   ├── VideoPdfModal.jsx
+│   │       │   ├── Pagination.jsx.js
+│   │       │   └── VideoPlayer.jsx.js
+│   │       ├── pages/
+│   │       │   ├── AddCourse.jsx
+│   │       │   ├── CourseContent.jsx
+│   │       │   ├── CourseInfo.jsx
+│   │       │   ├── Courses.jsx
+│   │       │   ├── CreateExam.jsx
+│   │       │   ├── EditExam.jsx
+│   │       │   ├── Exam.jsx
+│   │       │   └── index.js
+│   │       ├── store/
+│   │       │   └── coursesStore.js
+│   │       └── index.js
 │   ├── hooks/                  # Custom React hooks
 │   │   └── useFetch.js         # Hook for fetching data
 │   ├── layouts/                # Layout components
@@ -98,7 +129,7 @@ Rafeeq/
 │   │   ├── CourseContent.jsx
 │   │   ├── CourseInfo.jsx
 │   │   ├── Courses.jsx
-│   │   ├── CreateCourse.jsx
+│   │   ├── CreateExam.jsx
 │   │   ├── EditExam.jsx
 │   │   ├── Exam.jsx
 │   │   ├── Home.jsx

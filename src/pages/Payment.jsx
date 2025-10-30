@@ -31,7 +31,7 @@ export default function Payment() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-darkBg">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100  ">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 w-full max-w-md border border-gray-200 dark:border-gray-700">
         <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800 dark:text-white">
           💳 صفحة الدفع

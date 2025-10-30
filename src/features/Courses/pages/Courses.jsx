@@ -1,10 +1,10 @@
 import React, { useState, useMemo } from "react";
-import CoursesHeader from "../components/Courses/CoursesHeader";
-import CoursesFilter from "../components/Courses/CoursesFilter";
-import UniversitySection from "../components/Courses/UniversitySection";
-import EmptyState from "../components/Courses/EmptyState";
-import Pagination from "../components/Courses/Pagination";
-import coursesData from "../data/data.json";
+import CoursesHeader from "../components/CoursesHeader";
+import CoursesFilter from "../components/CoursesFilter";
+import UniversitySection from "../components/UniversitySection";
+import EmptyState from "../components/EmptyState";
+import Pagination from "../components/Pagination";
+import coursesData from "../../../data/data.json";
 
 export default function Courses() {
   const [filters, setFilters] = useState({

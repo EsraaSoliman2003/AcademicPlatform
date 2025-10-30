@@ -7,8 +7,7 @@ export default function CourseCard({ course, mode = "default", onClick }) {
   return (
     <div
       onClick={onClick}
-      className="bg-white dark:bg-darkBg rounded-2xl shadow-lg overflow-hidden border border-gray-200 
-                dark:border-gray-700 hover:shadow-xl transition-all duration-300 group cursor-pointer"
+      className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 group cursor-pointer"
     >
       <div className="relative">
         <img
@@ -34,17 +33,17 @@ export default function CourseCard({ course, mode = "default", onClick }) {
       </div>
 
       <div className="p-4 space-y-3">
-        <h3 className="font-bold text-lightText dark:text-darkText line-clamp-2 group-hover:text-primary transition-colors duration-200">
+        <h3 className="font-bold text-lightText line-clamp-2 group-hover:text-primary transition-colors duration-200">
           {course.title}
         </h3>
 
         {!isProfileMode && (
-          <p className="text-grayText dark:text-grayTextDark text-sm line-clamp-2">
+          <p className="text-grayText text-sm line-clamp-2">
             {course.description}
           </p>
         )}
 
-        <div className="flex flex-wrap justify-between text-sm text-gray-600 dark:text-gray-400 mt-2">
+        <div className="flex flex-wrap justify-between text-sm text-gray-600 mt-2">
           <div className="flex items-center gap-1">
             <span>⏱️</span> <span>{course.duration}</span>
           </div>
@@ -57,14 +56,14 @@ export default function CourseCard({ course, mode = "default", onClick }) {
           </div>
         </div>
 
-        <div className="text-sm text-gray-500 dark:text-gray-400">
-          <span className="font-semibold text-gray-700 dark:text-gray-200">
+        <div className="text-sm text-gray-500">
+          <span className="font-semibold text-gray-700">
             المدرّس:
           </span>{" "}
           {course.instructor}
         </div>
 
-        <div className="flex justify-between items-center pt-2 border-t border-gray-100 dark:border-gray-700 mt-2">
+        <div className="flex justify-between items-center pt-2 border-t border-gray-100">
           <span className="text-primary font-semibold text-base">
             {course.price === 0 ? "مجاني" : `${course.price} ريال`}
           </span>

@@ -29,7 +29,7 @@ export default function CoursesHeader({ onSearch, totalCourses }) {
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full px-4 py-3 pr-12 border border-gray-300  rounded-2xl 
                        focus:ring-2 focus:ring-primary focus:border-transparent
-                         transition-colors duration-200"
+                         transition-colors duration-200 bg-lightBg"
             />
             <button
               type="submit"
